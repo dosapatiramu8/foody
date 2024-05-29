@@ -1,18 +1,36 @@
 plugins {
     id 'java'
+    id 'jacoco'
+    id "org.sonarqube" version "3.4.0.2513"
+    id 'org.springframework.boot' version '3.2.4'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id "com.gorylenko.gradle-git-properties" version '2.4.1'
 }
 
 group 'com.foody.user'
 version '0.0.1-SNAPSHOT'
+sourceCompatibility = '17.0.8'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation project(path: ':security')
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
+
+repositories {
+    maven {
+        url 'https://artifactory.albertsons.com:443/artifactory/SafewayPublicGroup/'
+        credentials {
+            username "safewaybuild"
+            password "{gT79p/QHBbAHYekmDSWYUWsB4RkklliHeCk+WbNCh2c=}"
+        }
+    }
+}
+
 
 test {
     useJUnitPlatform()
