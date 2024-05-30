@@ -29,36 +29,6 @@ repositories {
         }
     }
 
-
-    components {
-        'bracket-cost-service'.with {
-            safewayPublicGroupRepository()
-        }
-        'vendor-service'.with {
-            safewayPublicGroupRepository()
-        }
-        'cost-change-service'.with {
-            safewayPublicGroupRepository()
-        }
-        'config-service'.with {
-            safewayPublicGroupRepository()
-        }
-        'user-service'.with {
-            safewayPublicGroupRepository()
-        }
-        'merchant-service'.with {
-            safewayPublicGroupRepository()
-        }
-        'common'.with {
-            safewayPublicGroupRepository()
-        }
-        'data'.with {
-            safewayPublicGroupRepository()
-        }
-        'rest'.with {
-            safewayPublicGroupRepository()
-        }
-    }
 }
 
 allprojects {
@@ -69,6 +39,9 @@ allprojects {
 
 
     dependencies {
+        implementation project(":common")
+        implementation project(":mongo-data")
+        implementation project(":sql-data")
 
         implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
         implementation 'org.springframework.boot:spring-boot-starter-actuator'

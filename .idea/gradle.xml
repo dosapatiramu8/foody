@@ -14,6 +14,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/analytics-service" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/customer-service" />
             <option value="$PROJECT_DIR$/delivery-service" />
             <option value="$PROJECT_DIR$/inventory-service" />
             <option value="$PROJECT_DIR$/mongo-data" />
@@ -27,7 +29,6 @@
             <option value="$PROJECT_DIR$/security" />
             <option value="$PROJECT_DIR$/sql-data" />
             <option value="$PROJECT_DIR$/supoort-service" />
-            <option value="$PROJECT_DIR$/user-service" />
           </set>
         </option>
       </GradleProjectSettings>
