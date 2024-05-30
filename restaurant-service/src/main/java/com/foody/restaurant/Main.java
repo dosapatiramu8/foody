@@ -1,4 +1,4 @@
-package com.foody.restaurent;
+package com.foody.restaurant;
 
 public class Main {
     public static void main(String[] args) {

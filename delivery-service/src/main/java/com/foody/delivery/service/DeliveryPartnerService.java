@@ -1,7 +1,7 @@
 package com.foody.delivery.service;
 
-import com.foody.common.model.request.DeliveryPartnerRequest;
-import com.foody.common.model.response.DeliveryPartnerResponse;
+import com.foody.common.model.request.deliverypartner.DeliveryPartnerRequest;
+import com.foody.common.model.response.deliverypartner.DeliveryPartnerResponse;
 import org.springframework.stereotype.Service;
 import lombok.AllArgsConstructor;
 import reactor.core.publisher.Mono;

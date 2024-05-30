@@ -4,28 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d08ae53-faf9-41d9-b1b0-bb53caed9cc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/common/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/foody/common/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/request/CustomerRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/request/DeliveryPartnerRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/response/CustomerResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/response/DeliveryPartnerResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customer-service/src/main/java/com/foody/user/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customer-service/src/main/java/com/foody/user/service/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery-service/src/main/java/com/foody/delivery/controller/DeliveryPartnerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery-service/src/main/java/com/foody/delivery/service/DeliveryPartnerService.java" afterDir="false" />
+    <list default="true" id="2d08ae53-faf9-41d9-b1b0-bb53caed9cc7" name="Changes" comment="Added CustomerController and DeliveryPartnerController and their service classes">
+      <change afterPath="$PROJECT_DIR$/admin-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-service/src/main/java/com/foody/admin/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-service/src/main/java/com/foody/admin/controller/AdminUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-service/src/main/java/com/foody/admin/service/AdminUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/request/admin/AdminUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/response/admin/AdminUserResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/request/CustomerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/request/customer/CustomerRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/request/DeliveryPartnerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/request/deliverypartner/DeliveryPartnerRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/response/CustomerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/response/customer/CustomerResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/response/DeliveryPartnerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/response/deliverypartner/DeliveryPartnerResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/src/main/java/com/foody/user/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/java/com/foody/user/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/src/main/java/com/foody/user/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/java/com/foody/user/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery-service/src/main/java/com/foody/delivery/controller/DeliveryPartnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/delivery-service/src/main/java/com/foody/delivery/controller/DeliveryPartnerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery-service/src/main/java/com/foody/delivery/service/DeliveryPartnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/delivery-service/src/main/java/com/foody/delivery/service/DeliveryPartnerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-service/src/main/java/com/foody/restaurent/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/src/main/java/com/foody/restaurant/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/foody/user/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/java/com/foody/user/UserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/foody/user/controller/DeliveryPartnerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/foody/user/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/foody/user/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/resources/config/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,10 +137,20 @@
       <option name="presentableId" value="Default" />
       <updated>1716829494248</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added CustomerController and DeliveryPartnerController and their service classes">
+      <created>1717053713773</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717053713773</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Added CustomerController and DeliveryPartnerController and their service classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added CustomerController and DeliveryPartnerController and their service classes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,7 +1,7 @@
 package com.foody.user.controller;
 
-import com.foody.common.model.request.CustomerRequest;
-import com.foody.common.model.response.CustomerResponse;
+import com.foody.common.model.request.customer.CustomerRequest;
+import com.foody.common.model.response.customer.CustomerResponse;
 import com.foody.user.service.CustomerService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

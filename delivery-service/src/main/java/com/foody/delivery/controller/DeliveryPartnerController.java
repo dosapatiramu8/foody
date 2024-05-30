@@ -1,7 +1,7 @@
 package com.foody.delivery.controller;
 
-import com.foody.common.model.request.DeliveryPartnerRequest;
-import com.foody.common.model.response.DeliveryPartnerResponse;
+import com.foody.common.model.request.deliverypartner.DeliveryPartnerRequest;
+import com.foody.common.model.response.deliverypartner.DeliveryPartnerResponse;
 import com.foody.delivery.service.DeliveryPartnerService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

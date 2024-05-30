@@ -1,4 +1,5 @@
-package com.foody.common.model.response;
+package com.foody.common.model.request.deliverypartner;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -6,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DeliveryPartnerResponse {
-    private Long id;
+public class DeliveryPartnerRequest {
     private String name;
     private String email;
     private String phoneNumber;
+
 
 }

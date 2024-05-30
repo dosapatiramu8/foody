@@ -15,4 +15,5 @@ include 'inventory-service'
 include 'analytics-service'
 include 'supoort-service'
 include 'common'
+include 'admin-service'
 
