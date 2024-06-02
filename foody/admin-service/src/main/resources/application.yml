@@ -1,0 +1,27 @@
+server:
+  port: 8081
+  compression:
+    enabled: true
+    mime-types:
+      - application/json
+spring:
+  webflux:
+    base-path: /admin
+  application:
+    name: food
+  codec:
+    max-in-memory-size: 5000KB
+
+logging:
+  level:
+    com.foody.restaurant: INFO
+
+mongodb:
+  uri: mongodb://localhost:27017/
+  databaseName: foody
+  connectTimeout: 15
+  readTimeout: 15
+  maxWaitTime: 15
+  maxPoolSize: 200
+  minPoolSize: 50
+  maxConnectionIdleTime: 30

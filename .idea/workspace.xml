@@ -4,7 +4,137 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d08ae53-faf9-41d9-b1b0-bb53caed9cc7" name="Changes" comment="Added CustomerController and DeliveryPartnerController and their service classes" />
+    <list default="true" id="2d08ae53-faf9-41d9-b1b0-bb53caed9cc7" name="Changes" comment="Added Restaurant controller service and model classes">
+      <change afterPath="$PROJECT_DIR$/foody/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/admin-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/admin-service/src/main/java/com/foody/admin/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/admin-service/src/main/java/com/foody/admin/controller/AdminUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/admin-service/src/main/java/com/foody/admin/service/AdminUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/analytics-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/analytics-service/src/main/java/com/foody/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/common/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/common/src/main/java/com/foody/common/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/common/src/main/java/com/foody/common/model/request/admin/AdminUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/common/src/main/java/com/foody/common/model/request/customer/CustomerRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/common/src/main/java/com/foody/common/model/request/deliverypartner/DeliveryPartnerRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/common/src/main/java/com/foody/common/model/request/restaurant/RestaurantUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/common/src/main/java/com/foody/common/model/response/admin/AdminUserResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/common/src/main/java/com/foody/common/model/response/customer/CustomerResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/common/src/main/java/com/foody/common/model/response/deliverypartner/DeliveryPartnerResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/common/src/main/java/com/foody/common/model/response/restaurant/RestaurantUserResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/customer-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/customer-service/src/main/java/com/foody/user/UserServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/customer-service/src/main/java/com/foody/user/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/customer-service/src/main/java/com/foody/user/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/customer-service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/customer-service/src/main/resources/config/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/delivery-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/delivery-service/src/main/java/com/foody/delivery/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/delivery-service/src/main/java/com/foody/delivery/controller/DeliveryPartnerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/delivery-service/src/main/java/com/foody/delivery/service/DeliveryPartnerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/inventory-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/inventory-service/src/main/java/com/foody/inventory/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/mongo-data/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/mongo-data/src/main/java/com/foody/data/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/mongo-data/src/main/java/com/foody/data/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/mongo-data/src/main/java/com/foody/data/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/notification-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/notification-service/src/main/java/com/foody/notification/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/order-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/order-service/src/main/java/com/foody/order/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/payment-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/payment-service/src/main/java/com/foody/payment/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/recommendation-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/recommendation-service/src/main/java/com/foody/recommendation/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/rest-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/rest-service/src/main/java/com/foody/rest/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/restaurant-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/restaurant-service/src/main/java/com/foody/restaurant/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/restaurant-service/src/main/java/com/foody/restaurant/controller/RestaurantUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/restaurant-service/src/main/java/com/foody/restaurant/service/RestaurantUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/review-rating-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/review-rating-service/src/main/java/com/foody/review/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/search-discovery-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/search-discovery-service/src/main/java/com/foody/search/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/security/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/security/src/main/java/com/foody/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/sql-data/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/sql-data/src/main/java/com/foody/sql/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/supoort-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foody/supoort-service/src/main/java/com/foody/support/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-service/src/main/java/com/foody/admin/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-service/src/main/java/com/foody/admin/controller/AdminUserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-service/src/main/java/com/foody/admin/service/AdminUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analytics-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analytics-service/src/main/java/com/foody/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/foody/common/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/request/admin/AdminUserRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/request/customer/CustomerRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/request/deliverypartner/DeliveryPartnerRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/request/restaurant/RestaurantUserRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/response/admin/AdminUserResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/response/customer/CustomerResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/response/deliverypartner/DeliveryPartnerResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/foody/common/model/response/restaurant/RestaurantUserResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/src/main/java/com/foody/user/UserServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/src/main/java/com/foody/user/controller/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/src/main/java/com/foody/user/service/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/src/main/resources/config/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery-service/src/main/java/com/foody/delivery/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery-service/src/main/java/com/foody/delivery/controller/DeliveryPartnerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery-service/src/main/java/com/foody/delivery/service/DeliveryPartnerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/foody/inventory/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongo-data/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongo-data/src/main/java/com/foody/data/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongo-data/src/main/java/com/foody/data/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongo-data/src/main/java/com/foody/data/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/foody/notification/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/foody/order/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/foody/payment/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommendation-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommendation-service/src/main/java/com/foody/recommendation/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-service/src/main/java/com/foody/restaurant/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-service/src/main/java/com/foody/restaurant/controller/RestaurantUserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-service/src/main/java/com/foody/restaurant/service/RestaurantUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/review-rating-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/review-rating-service/src/main/java/com/foody/review/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search-discovery-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search-discovery-service/src/main/java/com/foody/search/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/foody/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql-data/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql-data/src/main/java/com/foody/sql/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/supoort-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/supoort-service/src/main/java/com/foody/support/Main.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,7 +273,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717053713773</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added Restaurant controller service and model classes">
+      <option name="closed" value="true" />
+      <created>1717075806355</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717075806355</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,7 +298,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added CustomerController and DeliveryPartnerController and their service classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added CustomerController and DeliveryPartnerController and their service classes" />
+    <MESSAGE value="Added Restaurant controller service and model classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Restaurant controller service and model classes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

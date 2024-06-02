@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="/usr/local/Cellar/gradle/8.7/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/3.2.4/6f615928a73fec926e9a5e2fffc66da22666b8f7/spring-boot-configuration-processor-3.2.4.jar" />
+          <entry name="/usr/local/Cellar/gradle/8.7/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.22/9c08ea24c6eb714e2d6170e8122c069a0ba9aacf/lombok-1.18.22.jar" />
+        </processorPath>
+        <module name="foody.recommendation-service.main" />
+        <module name="foody.analytics-service.main" />
+        <module name="foody.payment-service.main" />
+        <module name="foody.rest-service.main" />
+        <module name="foody.sql-data.main" />
+        <module name="foody.admin-service.main" />
+        <module name="foody.notification-service.main" />
+        <module name="foody.review-rating-service.main" />
+        <module name="foody.search-discovery-service.main" />
+        <module name="foody.delivery-service.main" />
+        <module name="foody.order-service.main" />
+        <module name="foody.security.main" />
+        <module name="foody.common.main" />
+        <module name="foody.restaurant-service.main" />
+        <module name="foody.main" />
+        <module name="foody.mongo-data.main" />
+        <module name="foody.support-service.main" />
+        <module name="foody.inventory-service.main" />
+        <module name="foody.customer-service.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="/usr/local/Cellar/gradle/8.7/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.22/9c08ea24c6eb714e2d6170e8122c069a0ba9aacf/lombok-1.18.22.jar" />
+        </processorPath>
+        <module name="foody.inventory-service.test" />
+        <module name="foody.sql-data.test" />
+        <module name="foody.support-service.test" />
+        <module name="foody.common.test" />
+        <module name="foody.mongo-data.test" />
+        <module name="foody.order-service.test" />
+        <module name="foody.rest-service.test" />
+        <module name="foody.security.test" />
+        <module name="foody.review-rating-service.test" />
+        <module name="foody.analytics-service.test" />
+        <module name="foody.payment-service.test" />
+        <module name="foody.search-discovery-service.test" />
+        <module name="foody.restaurant-service.test" />
+        <module name="foody.customer-service.test" />
+        <module name="foody.admin-service.test" />
+        <module name="foody.notification-service.test" />
+        <module name="foody.recommendation-service.test" />
+        <module name="foody.test" />
+        <module name="foody.delivery-service.test" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="17" />
+  </component>
+</project>
