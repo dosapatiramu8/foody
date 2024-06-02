@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/admin-service/foody.admin-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/admin-service/foody.admin-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/analytics-service/foody.analytics-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/analytics-service/foody.analytics-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/foody.common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/foody.common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/customer-service/foody.customer-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/customer-service/foody.customer-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/delivery-service/foody.delivery-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/delivery-service/foody.delivery-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inventory-service/foody.inventory-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/inventory-service/foody.inventory-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mongo-data/foody.mongo-data.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mongo-data/foody.mongo-data.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/notification-service/foody.notification-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/notification-service/foody.notification-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/order-service/foody.order-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/order-service/foody.order-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/payment-service/foody.payment-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/payment-service/foody.payment-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/recommendation-service/foody.recommendation-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/recommendation-service/foody.recommendation-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest-service/foody.rest-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rest-service/foody.rest-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/restaurant-service/foody.restaurant-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/restaurant-service/foody.restaurant-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/review-rating-service/foody.review-rating-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/review-rating-service/foody.review-rating-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/search-discovery-service/foody.search-discovery-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/search-discovery-service/foody.search-discovery-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/security/foody.security.main.iml" filepath="$PROJECT_DIR$/.idea/modules/security/foody.security.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/support-service/foody.support-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/support-service/foody.support-service.main.iml" />
+    </modules>
+  </component>
+</project>

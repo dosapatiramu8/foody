@@ -17,19 +17,11 @@ public class CustomerController {
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<CustomerResponse> registerCustomer(@RequestBody CustomerRequest customerRequest) {
-        return customerService.registerCustomer(customerRequest)
-                .map(c -> {
-                    CustomerResponse response = new CustomerResponse();
-                    response.setId(c.getId());
-                    response.setName(c.getName());
-                    response.setEmail(c.getEmail());
-                    response.setPhoneNumber(c.getPhoneNumber());
-                    return response;
-                });
+        return customerService.registerCustomer(customerRequest);
     }
 
     @GetMapping("/{id}")
-    public Mono<CustomerResponse> getCustomer(@PathVariable Long id) {
+    public Mono<CustomerResponse> getCustomer(@PathVariable String id) {
         return customerService.getCustomerById(id)
                 .map(c -> {
                     CustomerResponse response = new CustomerResponse();
@@ -42,8 +34,8 @@ public class CustomerController {
     }
 
     @PutMapping("/{id}")
-    public Mono<CustomerResponse> updateCustomer(@PathVariable Long id, @RequestBody CustomerRequest customerRequest) {
-        return customerService.updateCustomer(id, customerRequest)
+    public Mono<CustomerResponse> updateCustomer(@RequestBody CustomerRequest customerRequest) {
+        return customerService.updateCustomer(customerRequest)
                 .map(c -> {
                     CustomerResponse response = new CustomerResponse();
                     response.setId(c.getId());
@@ -56,7 +48,7 @@ public class CustomerController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public Mono<Void> deleteCustomer(@PathVariable Long id) {
+    public Mono<Void> deleteCustomer(@PathVariable String id) {
         return customerService.deleteCustomer(id);
     }
 }

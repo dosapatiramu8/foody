@@ -2,18 +2,15 @@ package com.foody.user.service;
 
 import com.foody.common.model.request.customer.CustomerRequest;
 import com.foody.common.model.response.customer.CustomerResponse;
-import com.foody.data.entity.customer.CustomerUser;
-import com.foody.data.repository.customer.CustomerRepository;
 import com.foody.data.repository.customer.CustomerUserRepository;
 import com.foody.user.mapper.CustomerMapper;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 @Service
 @AllArgsConstructor
-public class CustomerUserService {
+public class CustomerService {
 
     private final CustomerUserRepository customerUserRepository;
 

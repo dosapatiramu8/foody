@@ -14,7 +14,7 @@ import reactor.core.publisher.Mono;
 
 @Repository
 @AllArgsConstructor
-public class RestaurantUserRepository {
+public class RestaurantRepository {
 
     private final ReactiveMongoTemplate reactiveMongoTemplate;
 
