@@ -3,7 +3,6 @@ package com.foody.restaurant.controller;
 import com.foody.common.model.request.restaurant.RestaurantUserRequest;
 import com.foody.common.model.response.restaurant.RestaurantUserResponse;
 import com.foody.restaurant.service.RestaurantService;
-import com.foody.restaurant.service.RestaurantUserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
