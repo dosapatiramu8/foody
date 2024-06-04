@@ -1,4 +1,4 @@
-package com.foody.delivery.mapper;
+package com.foody.common.mapper;
 
 import com.foody.common.model.request.deliverypartner.DeliveryPartnerRequest;
 import com.foody.common.model.response.deliverypartner.DeliveryPartnerResponse;

@@ -1,6 +1,6 @@
 package com.foody.admin.service;
 
-import com.foody.admin.mapper.AdminUserMapper;
+import com.foody.common.mapper.AdminUserMapper;
 import com.foody.common.model.request.admin.AdminUserRequest;
 import com.foody.common.model.response.admin.AdminUserResponse;
 import com.foody.data.repository.admin.AdminUserRepository;

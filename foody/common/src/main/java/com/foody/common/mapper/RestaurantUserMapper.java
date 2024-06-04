@@ -1,4 +1,4 @@
-package com.foody.restaurant.mapper;
+package com.foody.common.mapper;
 
 import com.foody.common.model.request.restaurant.RestaurantUserRequest;
 import com.foody.common.model.response.restaurant.RestaurantUserResponse;

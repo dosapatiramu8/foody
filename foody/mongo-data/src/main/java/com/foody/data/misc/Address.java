@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Address {
     private String addressId;
+    private String divisionId;
+    private String divisionName;
     private String houseNum;
     private String apartmentRoadArea;
     private String landMark;

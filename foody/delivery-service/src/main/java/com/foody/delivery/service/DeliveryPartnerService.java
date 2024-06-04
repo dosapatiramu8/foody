@@ -1,9 +1,9 @@
 package com.foody.delivery.service;
 
+import com.foody.common.mapper.DeliveryPartnerUserMapper;
 import com.foody.common.model.request.deliverypartner.DeliveryPartnerRequest;
 import com.foody.common.model.response.deliverypartner.DeliveryPartnerResponse;
 import com.foody.data.repository.delivery.DeliveryPartnerUserRepository;
-import com.foody.delivery.mapper.DeliveryPartnerUserMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;

@@ -1,5 +1,6 @@
 package com.foody.common.model.response.misc;
 
+import com.foody.common.model.misc.Location;
 import com.foody.common.model.request.misc.AddressRequest;
 import lombok.*;
 
@@ -18,4 +19,5 @@ public class UserResponse {
     private List<AddressResponse> addressRequestList;
     private Instant createdAt;
     private Instant updatedAt;
+    private Location currentLocation;
 }

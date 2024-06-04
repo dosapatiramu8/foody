@@ -1,9 +1,9 @@
 package com.foody.user.service;
 
+import com.foody.common.mapper.CustomerMapper;
 import com.foody.common.model.request.customer.CustomerRequest;
 import com.foody.common.model.response.customer.CustomerResponse;
 import com.foody.data.repository.customer.CustomerUserRepository;
-import com.foody.user.mapper.CustomerMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;

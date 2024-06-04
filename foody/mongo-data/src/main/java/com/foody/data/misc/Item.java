@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class Item {
 
+    private String restaurantId;
     private String itemId;
     private String unitType;
     private Double quantity;

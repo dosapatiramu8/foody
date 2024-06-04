@@ -1,5 +1,6 @@
 package com.foody.data.repository.restaurant;
 
+import com.foody.data.entity.restaurant.Restaurant;
 import com.foody.data.entity.restaurant.RestaurantUser;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
@@ -18,25 +19,25 @@ public class RestaurantRepository {
 
     private final ReactiveMongoTemplate reactiveMongoTemplate;
 
-    public Mono<RestaurantUser> save(RestaurantUser restaurantUser) {
+    public Mono<Restaurant> save(Restaurant restaurantUser) {
         return reactiveMongoTemplate.save(restaurantUser);
     }
 
-    public Mono<RestaurantUser> findById(String id) {
-        return reactiveMongoTemplate.findById(id, RestaurantUser.class);
+    public Mono<Restaurant> findById(String id) {
+        return reactiveMongoTemplate.findById(id, Restaurant.class);
     }
 
-    public Flux<RestaurantUser> findAll(int page, int size, String sortByField) {
+    public Flux<Restaurant> findAll(int page, int size, String sortByField) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.ASC, sortByField));
-        return reactiveMongoTemplate.find(Query.query(new Criteria()).with(pageable), RestaurantUser.class);
+        return reactiveMongoTemplate.find(Query.query(new Criteria()).with(pageable), Restaurant.class);
     }
 
-    public Mono<RestaurantUser> update(RestaurantUser restaurantUser) {
+    public Mono<Restaurant> update(Restaurant restaurantUser) {
         return reactiveMongoTemplate.save(restaurantUser);
     }
 
     public Mono<Void> deleteById(String id) {
-        return reactiveMongoTemplate.remove(Query.query(Criteria.where("id").is(id)), RestaurantUser.class).then();
+        return reactiveMongoTemplate.remove(Query.query(Criteria.where("id").is(id)), Restaurant.class).then();
     }
 }
 

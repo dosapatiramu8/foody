@@ -1,4 +1,4 @@
-package com.foody.admin.mapper;
+package com.foody.common.mapper;
 
 import com.foody.common.model.request.admin.AdminUserRequest;
 import com.foody.common.model.response.admin.AdminUserResponse;
