@@ -1,5 +1,7 @@
 package com.foody.restaurant.controller;
 
+import com.foody.common.model.request.restaurant.ItemRequest;
+import com.foody.common.model.response.restaurant.ItemResponse;
 import com.foody.common.model.response.restaurant.MenuItemResponse;
 import com.foody.restaurant.service.MenuService;
 import lombok.RequiredArgsConstructor;
@@ -13,18 +15,18 @@ public class MenuController {
 
     private final MenuService menuService;
 
-    @PostMapping("/addMenu")
-    public Mono<MenuItemResponse> addMenu(@RequestBody MenuItemRequest menuItemRequest) {
+    @PostMapping("/addItem")
+    public Mono<ItemResponse> addItem(@RequestBody ItemRequest menuItemRequest) {
         return menuService.addMenu(menuItemRequest);
     }
 
     @PutMapping("/menu/{menuId}")
-    public Mono<MenuItemResponse> updateMenu(@PathVariable String menuId, @RequestBody MenuItemRequest menuItemRequest) {
+    public Mono<ItemResponse> updateMenu(@PathVariable String menuId, @RequestBody ItemRequest menuItemRequest) {
         return menuService.updateMenu(menuId, menuItemRequest);
     }
 
     @GetMapping("/menu/{menuId}")
-    public Mono<MenuItemResponse> getMenuById(@PathVariable String menuId) {
+    public Mono<ItemResponse> getMenuById(@PathVariable String menuId) {
         return menuService.getMenuById(menuId);
     }
 
@@ -34,7 +36,7 @@ public class MenuController {
     }
 
     @GetMapping("/all")
-    public Flux<MenuItemResponse> getAllMenus(@RequestParam Integer page, @RequestParam Integer size, String sortByField) {
+    public Flux<ItemResponse> getAllMenus(@RequestParam Integer page, @RequestParam Integer size, String sortByField) {
         return menuService.getAllMenus(page,size,sortByField);
     }
 }

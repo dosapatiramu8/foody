@@ -4,6 +4,7 @@ import com.foody.common.model.response.misc.UserResponse;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.List;
 
 @Data
@@ -15,5 +16,7 @@ public class RestaurantResponse extends UserResponse {
     private String restaurantName;
     private String restaurantDescription;
     private List<ItemResponse> itemResponseList;
+    private Instant openTime;
+    private Instant closeTime;
     private BigDecimal rating;
 }

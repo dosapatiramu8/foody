@@ -14,8 +14,13 @@ public class OrderController {
 
     private final OrderService orderService;
 
-    @PostMapping
-    public Mono<OrderResponse> placeOrder(@RequestBody OrderRequest orderRequest) {
+    @PostMapping("/checkoutOrder")
+    public Mono<OrderResponse> checkoutOrder(@RequestBody OrderRequest orderRequest) {
+        return orderService.checkoutOrder(orderRequest);
+    }
+
+    @PostMapping("/placeOrder")
+    public Mono<String> placeOrder(@RequestBody OrderRequest orderRequest) {
         return orderService.placeOrder(orderRequest);
     }
 

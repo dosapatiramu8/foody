@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -29,8 +30,15 @@ public class Restaurant {
     private String address;
     private BigDecimal rating;
     @GeoSpatialIndexed
-    private GeoJsonPoint geoJsonPoint;
+    @Field("location")
+    private GeoJsonPoint location;
     private Instant createdAt;
     private Instant updatedAt;
     private List<Item> items;
+    private double latitude;
+    private double longitude;
+    private boolean isOpened;
+    private Instant openTime;
+    private Instant closeTime;
+
 }

@@ -1,5 +1,6 @@
 package com.foody.common.model.response.order;
 
+import com.foody.common.model.response.restaurant.ItemResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,5 +19,7 @@ public class OrderResponse {
     private List<ItemResponse> items;
     private Price price;
     private OrderStatus status;
+    private double timeInMinutes;
+    private double distanceInKilometers;
     // Add more fields as needed
 }

@@ -1,8 +1,8 @@
 package com.foody.restaurant.service;
 
 import com.foody.common.mapper.RestaurantUserMapper;
-import com.foody.common.model.request.restaurant.RestaurantUserRequest;
-import com.foody.common.model.response.restaurant.RestaurantUserResponse;
+import com.foody.common.model.request.restaurant.RestaurantRequest;
+import com.foody.common.model.response.restaurant.RestaurantResponse;
 import com.foody.data.repository.restaurant.RestaurantRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,16 +16,16 @@ public class RestaurantService {
 
     private final RestaurantUserMapper restaurantUserMapper;
 
-    public Mono<RestaurantUserResponse> registerRestaurant(RestaurantUserRequest restaurantRequest) {
+    public Mono<RestaurantResponse> registerRestaurant(RestaurantRequest restaurantRequest) {
         return restaurantRepository.save(restaurantUserMapper.convertToRestaurantUser(restaurantRequest))
                 .map(restaurantUserMapper::convertToRestaurantResponse);
     }
 
-    public Mono<RestaurantUserResponse> getRestaurantById(String id) {
+    public Mono<RestaurantResponse> getRestaurantById(String id) {
         return restaurantRepository.findById(id).map(restaurantUserMapper::convertToRestaurantResponse);
     }
 
-    public Mono<RestaurantUserResponse> updateRestaurant(RestaurantUserRequest restaurantRequest) {
+    public Mono<RestaurantResponse> updateRestaurant(RestaurantRequest restaurantRequest) {
         return restaurantRepository.update(restaurantUserMapper.convertToRestaurantUser(restaurantRequest))
                 .map(restaurantUserMapper::convertToRestaurantResponse);
     }

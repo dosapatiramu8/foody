@@ -5,6 +5,7 @@ import com.foody.common.model.response.restaurant.ItemResponse;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.List;
 
 @Data
@@ -13,7 +14,10 @@ import java.util.List;
 @Builder
 @EqualsAndHashCode(callSuper = false)
 public class RestaurantRequest extends UserRequest {
+    private String restaurantId;
     private String restaurantName;
     private String restaurantDescription;
-    private List<ItemResponse> itemResponseList;
+    private Instant openTime;
+    private Instant closeTime;
+    private List<ItemRequest> itemResponseList;
 }

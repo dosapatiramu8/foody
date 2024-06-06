@@ -16,7 +16,7 @@ public class UserResponse {
     private String email;
     private String phoneNumber;
     private String password;
-    private List<AddressResponse> addressRequestList;
+    private List<String> addresses;
     private Instant createdAt;
     private Instant updatedAt;
     private Location currentLocation;

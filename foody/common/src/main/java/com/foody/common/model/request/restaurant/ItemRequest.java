@@ -21,4 +21,5 @@ public class ItemRequest {
     private String itemCategoryCode;
     private String itemCategoryDescription;
     private BigDecimal price;
+    private boolean availability;
 }

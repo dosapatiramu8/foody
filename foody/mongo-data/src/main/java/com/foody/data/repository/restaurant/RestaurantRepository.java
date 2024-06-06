@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
@@ -20,6 +21,8 @@ public class RestaurantRepository {
     private final ReactiveMongoTemplate reactiveMongoTemplate;
 
     public Mono<Restaurant> save(Restaurant restaurantUser) {
+        GeoJsonPoint geoJsonPoint = new GeoJsonPoint(restaurantUser.getLongitude(),restaurantUser.getLatitude());
+        restaurantUser.setLocation(geoJsonPoint);
         return reactiveMongoTemplate.save(restaurantUser);
     }
 

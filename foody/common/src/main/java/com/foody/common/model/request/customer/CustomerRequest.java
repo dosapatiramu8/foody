@@ -13,7 +13,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 public class CustomerRequest extends UserRequest {
 
-
+    private String customerId;
     private String referralCode;
 
 }

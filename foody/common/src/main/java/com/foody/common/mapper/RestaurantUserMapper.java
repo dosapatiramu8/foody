@@ -1,8 +1,8 @@
 package com.foody.common.mapper;
 
-import com.foody.common.model.request.restaurant.RestaurantUserRequest;
-import com.foody.common.model.response.restaurant.RestaurantUserResponse;
-import com.foody.data.entity.restaurant.RestaurantUser;
+import com.foody.common.model.request.restaurant.RestaurantRequest;
+import com.foody.common.model.response.restaurant.RestaurantResponse;
+import com.foody.data.entity.restaurant.Restaurant;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
@@ -11,14 +11,14 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class RestaurantUserMapper {
 
-    public RestaurantUser convertToRestaurantUser(RestaurantUserRequest restaurantUserRequest){
-        RestaurantUser restaurantUser = new RestaurantUser();
+    public Restaurant convertToRestaurantUser(RestaurantRequest restaurantUserRequest){
+        Restaurant restaurantUser = new Restaurant();
         BeanUtils.copyProperties(restaurantUserRequest,restaurantUser);
         return restaurantUser;
     }
 
-    public RestaurantUserResponse convertToRestaurantResponse(RestaurantUser restaurantUser){
-        RestaurantUserResponse restaurantUserResponse = new RestaurantUserResponse();
+    public RestaurantResponse convertToRestaurantResponse(Restaurant restaurantUser){
+        RestaurantResponse restaurantUserResponse = new RestaurantResponse();
         BeanUtils.copyProperties(restaurantUser,restaurantUserResponse);
         return restaurantUserResponse;
     }

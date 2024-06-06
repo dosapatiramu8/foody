@@ -14,7 +14,7 @@ public class Price {
     private double itemsPrice;
     private double deliveryCharge;
     private double surcharge;
-    private double ourFee;
+    private double platformFee;
     private double gstTax;
     private double totalTax;
     private double totalPrice;

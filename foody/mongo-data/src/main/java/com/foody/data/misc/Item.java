@@ -13,10 +13,12 @@ public class Item {
     private String restaurantId;
     private String itemId;
     private String unitType;
-    private Double quantity;
+    private String unitSize;  // E.g., "1 piece", "250g", "500ml", etc.
+    private String unitDescription;  // Additional description if needed
+    private double quantity;
     private String itemName;
     private String itemDescription;
     private String itemCategoryCode;
     private String itemCategoryDescription;
-    private BigDecimal price;
+    private double price;
 }

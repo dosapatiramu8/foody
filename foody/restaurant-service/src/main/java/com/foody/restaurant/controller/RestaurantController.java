@@ -1,8 +1,7 @@
 package com.foody.restaurant.controller;
 
-import com.foody.common.model.request.restaurant.RestaurantUserRequest;
-import com.foody.common.model.response.restaurant.MenuItemResponse;
-import com.foody.common.model.response.restaurant.RestaurantUserResponse;
+import com.foody.common.model.request.restaurant.RestaurantRequest;
+import com.foody.common.model.response.restaurant.RestaurantResponse;
 import com.foody.restaurant.service.RestaurantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -18,19 +17,19 @@ public class RestaurantController {
 
     // Create operation
     @PostMapping
-    public Mono<RestaurantUserResponse> registerRestaurant(@RequestBody RestaurantUserRequest restaurantUserRequest) {
+    public Mono<RestaurantResponse> registerRestaurant(@RequestBody RestaurantRequest restaurantUserRequest) {
         return restaurantService.registerRestaurant(restaurantUserRequest);
     }
 
     // Read operation
     @GetMapping("/{id}")
-    public Mono<RestaurantUserResponse> getRestaurantUserById(@PathVariable("id") String id) {
+    public Mono<RestaurantResponse> getRestaurantUserById(@PathVariable("id") String id) {
         return restaurantService.getRestaurantById(id);
     }
 
     // Update operation
     @PutMapping("/update")
-    public Mono<RestaurantUserResponse> updateRestaurantUser(@RequestBody RestaurantUserRequest request) {
+    public Mono<RestaurantResponse> updateRestaurantUser(@RequestBody RestaurantRequest request) {
         return restaurantService.updateRestaurant(request);
     }
 

@@ -1,7 +1,7 @@
 package com.foody.common.mapper;
 
 import com.foody.common.model.request.restaurant.ItemRequest;
-import com.foody.common.model.response.restaurant.MenuItemResponse;
+import com.foody.common.model.response.restaurant.ItemResponse;
 import com.foody.data.entity.restaurant.MenuItem;
 import com.foody.data.misc.Item;
 import org.springframework.beans.BeanUtils;
@@ -11,22 +11,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class MenuMapper {
+public class ItemMapper {
 
-    public MenuItem convertToMenuItem(MenuItemRequest menuItemRequest) {
-        MenuItem menuItem = new MenuItem();
-        menuItem.setRestaurantId(menuItemRequest.getRestaurantId());
-        menuItem.setMenuId(menuItemRequest.getMenuId());
-        menuItem.setAvailability(menuItemRequest.isAvailability());
-
-        List<Item> itemList = menuItemRequest.getItems().stream()
-                .map(this::convertToItem)
-                .collect(Collectors.toList());
-
-        menuItem.setItems(itemList);
-
-        return menuItem;
-    }
 
     public Item convertToItem(ItemRequest itemRequest) {
         Item item = new Item();
@@ -40,8 +26,8 @@ public class MenuMapper {
         return itemResponse;
     }
 
-    public MenuItemResponse convertToMenuItemResponse(MenuItem menuItem) {
-        MenuItemResponse menuItemResponse = new MenuItemResponse();
+    public ItemResponse convertToMenuItemResponse(Item menuItem) {
+        ItemResponse menuItemResponse = new ItemResponse();
         BeanUtils.copyProperties(menuItem, menuItemResponse);
         return menuItemResponse;
     }
