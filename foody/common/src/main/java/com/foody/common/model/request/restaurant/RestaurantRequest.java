@@ -19,5 +19,8 @@ public class RestaurantRequest extends UserRequest {
     private String restaurantDescription;
     private Instant openTime;
     private Instant closeTime;
+    private String address;
+    private double latitude;
+    private double longitude;
     private List<ItemRequest> itemResponseList;
 }

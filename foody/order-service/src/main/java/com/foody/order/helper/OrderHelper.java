@@ -9,7 +9,7 @@ import com.foody.common.model.response.order.OrderStatus;
 import com.foody.common.model.response.order.Price;
 import com.foody.data.entity.order.Order;
 import com.foody.data.misc.Item;
-import com.foody.rest.config.GoogleMapsAPI;
+import com.foody.rest.client.GoogleMapsAPI;
 import lombok.RequiredArgsConstructor;
 import org.apache.hc.core5.http.HttpStatus;
 import org.springframework.stereotype.Component;

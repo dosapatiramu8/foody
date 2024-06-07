@@ -20,7 +20,8 @@ public class ItemRestaurantSearchRepository {
     private final ReactiveMongoTemplate reactiveMongoTemplate;
 
 
-    public Flux<Restaurant> findByLocationAndNameOrItemNear(double latitude, double longitude, double maxDistanceInKilometers, String searchQuery) {
+    public Flux<Restaurant> findByLocationAndNameOrItemNear(double latitude, double longitude,
+                                                            double maxDistanceInKilometers, String searchQuery) {
         GeoJsonPoint location = new GeoJsonPoint(longitude, latitude);
         NearQuery nearQuery = NearQuery.near(location).maxDistance(maxDistanceInKilometers).inKilometers();
 

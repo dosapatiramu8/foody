@@ -34,7 +34,7 @@ public class WebClientService {
      * @param <R>                        The type of the expected response.
      * @return A Mono of ResponseEntity representing the response entity with status, headers, and body.
      */
-    <P, R> Mono<R> postAsync(String uri, HttpHeaders httpHeaders, P payload, ParameterizedTypeReference<R> parameterizedTypeReference) {
+    public <P, R> Mono<R> postAsync(String uri, HttpHeaders httpHeaders, P payload, ParameterizedTypeReference<R> parameterizedTypeReference) {
         long startTime = System.currentTimeMillis();
         return postCall(uri,httpHeaders,payload).bodyToMono(parameterizedTypeReference).doOnSuccess(response -> {
                     log.info("Client API call {} {} ",uri, payload);
@@ -55,7 +55,7 @@ public class WebClientService {
      * @param <R>         The type of the expected response.
      * @return A Mono of ResponseEntity representing the response entity with status, headers, and body.
      */
-    <P, R> Mono<R> postAsync(String uri, HttpHeaders httpHeaders, P payload, Class<R> r) {
+    public <P, R> Mono<R> postAsync(String uri, HttpHeaders httpHeaders, P payload, Class<R> r) {
         long startTime = System.currentTimeMillis();
         return postCall(uri,httpHeaders,payload).bodyToMono(r).doOnSuccess(response -> {
             log.info("Client API call {} {} {} ",uri, httpHeaders, payload);

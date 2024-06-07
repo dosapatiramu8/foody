@@ -4,6 +4,7 @@ public enum OrderStatus {
     PLACED,
     PROCESSING,
     COMPLETED,
-    CANCELED
+    CANCELED,
+    FAILED
     // Add more statuses as needed
 }

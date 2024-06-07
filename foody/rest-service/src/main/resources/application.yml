@@ -1,3 +1,4 @@
 web-flux-config:
   mapsWebClientHost: https://maps.googleapis.com
-  key: AIzaSyBOdAycg3B1YBmSlD7lz_Te2KEC9qooKEQ
+  mapsAPIKey: AIzaSyBOdAycg3B1YBmSlD7lz_Te2KEC9qooKEQ
+  notificationWebClientHost: http://notification-service

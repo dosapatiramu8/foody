@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -38,6 +39,27 @@ public class OrderRepository {
 
     public Mono<Void> deleteById(String id) {
         return reactiveMongoTemplate.remove(Query.query(Criteria.where("id").is(id)), Order.class).then();
+    }
+
+    public Mono<Void> updateOrderStatus(String orderId, String orderStatus) {
+        Query query = new Query(Criteria.where("orderId").is(orderId));
+        Update update = new Update().set("orderStatus", orderStatus);
+        return Mono.fromRunnable(() -> reactiveMongoTemplate.updateFirst(query, update, Order.class))
+                .then();
+    }
+
+    public Mono<Void> updateOrderAndPaymentStatus(String orderId, String orderStatus, String paymentStatus) {
+        Query query = new Query(Criteria.where("id").is(orderId));
+        Update update = new Update().set("status", orderStatus).set("paymentStatus", paymentStatus);
+
+        return Mono.fromRunnable(() -> reactiveMongoTemplate.updateFirst(query, update, Order.class))
+                .then();
+    }
+
+
+    public Mono<Order> fetchOrder(String orderId) {
+        Query query = new Query(Criteria.where("orderId").is(orderId));
+        return reactiveMongoTemplate.findOne(query, Order.class);
     }
 
 }

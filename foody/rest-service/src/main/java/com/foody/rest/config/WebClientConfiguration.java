@@ -32,6 +32,19 @@ public class WebClientConfiguration implements WebFluxConfigurer {
         return createCustomWebClient(webClientPropertiesConfig.getMapsWebClientHost(), httpHeaders).build();
     }
 
+
+    /**
+     * Retrieves the WebClient instance configured for the partner API.
+     *
+     * @return The configured WebClient instance for the partner API.
+     */
+    @Bean(name = "notificationWebClient")
+    public WebClient getNotificationWebClient() {
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.set("key",webClientPropertiesConfig.getMapsAPIKey());
+        return createCustomWebClient(webClientPropertiesConfig.getMapsWebClientHost(), httpHeaders).build();
+    }
+
     /**
      * Creates a custom WebClient.Builder instance with the specified base URL and headers.
      *

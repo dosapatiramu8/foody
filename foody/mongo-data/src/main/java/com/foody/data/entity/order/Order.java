@@ -21,6 +21,7 @@ public class Order {
     private List<Item> items;
     private Price price;
     private OrderStatus orderStatus;
-    private double timeInMinutes;
+    private double estimatedTimeInMinutes;
+    private double timeTakenInMinutes;
     private double distanceInKilometers;
 }

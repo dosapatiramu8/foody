@@ -33,5 +33,9 @@ public class DeliveryPartnerService {
     public Mono<Void> deleteDeliveryPartner(String id) {
         return deliveryPartnerUserRepository.deleteById(id);
     }
+
+    public Mono<String> assignDeliveryPartner(double latitude, double longitude) {
+        deliveryPartnerUserRepository.findNearByDeliveryPartners(latitude, longitude);
+    }
 }
 

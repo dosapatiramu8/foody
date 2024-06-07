@@ -1,7 +1,9 @@
-package com.foody.rest.config;
+package com.foody.rest.client;
 
 import com.foody.common.model.misc.maps.DistanceMatrixResponse;
 import com.foody.common.model.misc.maps.TravelInfo;
+import com.foody.rest.config.WebClientPropertiesConfig;
+import com.foody.rest.config.WebClientService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
@@ -11,13 +13,13 @@ import reactor.core.publisher.Mono;
 
 @Configuration
 @Slf4j
-public class GoogleMapsAPI extends WebClientService{
+public class GoogleMapsClient extends WebClientService {
 
     private WebClient webClient;
 
     private WebClientPropertiesConfig webClientPropertiesConfig;
 
-    public GoogleMapsAPI(@Qualifier("mapsWebClient") WebClient webClient, WebClientPropertiesConfig webClientPropertiesConfig){
+    public GoogleMapsClient(@Qualifier("mapsWebClient") WebClient webClient, WebClientPropertiesConfig webClientPropertiesConfig){
         super(webClient,webClientPropertiesConfig);
     }
 

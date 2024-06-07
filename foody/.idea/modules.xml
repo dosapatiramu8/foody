@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/customer-service/foody.customer-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/customer-service/foody.customer-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/delivery-service/foody.delivery-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/delivery-service/foody.delivery-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/inventory-service/foody.inventory-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/inventory-service/foody.inventory-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kafka/foody.kafka.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kafka/foody.kafka.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mongo-data/foody.mongo-data.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mongo-data/foody.mongo-data.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/notification-service/foody.notification-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/notification-service/foody.notification-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/order-service/foody.order-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/order-service/foody.order-service.main.iml" />

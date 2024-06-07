@@ -17,4 +17,6 @@ include 'support-service'
 include 'common'
 include 'admin-service'
 include 'rest-service'
+include 'redis'
+include 'kafka'
 

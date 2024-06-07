@@ -1,7 +1,6 @@
 package com.foody.data.repository.restaurant;
 
 import com.foody.data.entity.restaurant.Restaurant;
-import com.foody.data.entity.restaurant.RestaurantUser;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

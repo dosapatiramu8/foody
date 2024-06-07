@@ -14,11 +14,13 @@
             <option value="$PROJECT_DIR$/customer-service" />
             <option value="$PROJECT_DIR$/delivery-service" />
             <option value="$PROJECT_DIR$/inventory-service" />
+            <option value="$PROJECT_DIR$/kafka" />
             <option value="$PROJECT_DIR$/mongo-data" />
             <option value="$PROJECT_DIR$/notification-service" />
             <option value="$PROJECT_DIR$/order-service" />
             <option value="$PROJECT_DIR$/payment-service" />
             <option value="$PROJECT_DIR$/recommendation-service" />
+            <option value="$PROJECT_DIR$/redis" />
             <option value="$PROJECT_DIR$/rest-service" />
             <option value="$PROJECT_DIR$/restaurant-service" />
             <option value="$PROJECT_DIR$/review-rating-service" />

@@ -15,5 +15,6 @@ public class WebClientPropertiesConfig {
     private Integer maxMemoryInBytes;
     private String mapsWebClientHost;
     private String mapsAPIKey;
+    private String notificationWebClientHost;
 
 }

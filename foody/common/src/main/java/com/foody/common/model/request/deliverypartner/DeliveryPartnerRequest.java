@@ -12,9 +12,11 @@ import java.time.Instant;
 @EqualsAndHashCode(callSuper = false)
 public class DeliveryPartnerRequest extends UserRequest {
 
+    private String deliveryPartnerId;
     private String vehicleType;
     private String vehicleNumber;
     private String chassisNumber;
     private Instant registrationDate;
+    private boolean availability;
 
 }
