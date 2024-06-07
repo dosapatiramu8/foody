@@ -1,0 +1,17 @@
+server:
+  port: 8085
+  compression:
+    enabled: true
+    mime-types:
+      - application/json
+spring:
+  webflux:
+    base-path: /notification
+  application:
+    name: food
+  codec:
+    max-in-memory-size: 5000KB
+
+logging:
+  level:
+    com.foody.restaurant: INFO

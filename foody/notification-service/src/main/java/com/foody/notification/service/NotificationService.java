@@ -24,16 +24,17 @@ public class NotificationService {
     private final Map<String, Sinks.One<Boolean>> acceptanceSinks = new ConcurrentHashMap<>();
 
 
-    public Mono<Void> notifyPartner(DeliveryPartner deliveryPartner, OrderPartnerDetails orderPartnerDetails) {
-        return Mono.fromRunnable(() -> kafkaTemplate.send(deliveryPartnerNotification, deliveryPartner.getDeliveryPartnerId(),
+    public Mono<Void> notifyPartner(OrderPartnerDetails orderPartnerDetails) {
+        return Mono.fromRunnable(() -> kafkaTemplate.send(deliveryPartnerNotification, orderPartnerDetails.getOrderId(),
                 orderPartnerDetails)).then();
     }
 
-    public Mono<Boolean> waitForAcceptance(DeliveryPartner deliveryPartner, OrderRequest orderRequest) {
+    public Mono<Boolean> waitForAcceptance(OrderPartnerDetails orderPartnerDetails) {
+        kafkaTemplate.re
         Sinks.One<Boolean> sink = Sinks.one();
-        acceptanceSinks.put(orderRequest.getOrderId(), sink);
+        acceptanceSinks.put(orderPartnerDetails.getOrderId(), sink);
         return sink.asMono()
-            .doFinally(signalType -> acceptanceSinks.remove(orderRequest.getOrderId()));
+            .doFinally(signalType -> acceptanceSinks.remove(orderPartnerDetails.getOrderId()));
     }
 
     public void acknowledgeOrder(String orderId, boolean accepted) {

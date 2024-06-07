@@ -20,18 +20,13 @@ public class NotificationController {
         this.notificationService = notificationService;
     }
 
-    @PostMapping("/notify")
-    public Mono<Void> notifyDeliveryPartner(@RequestBody OrderRequest orderRequest) {
-        return notificationService.notifyDeliveryPartner(orderRequest);
+    @PostMapping("/assignDeliveryPartner")
+    public Mono<Void> notifyPartner(OrderPartnerDetails orderPartnerDetails) {
+        return notificationService.notifyPartner(orderPartnerDetails);
     }
-
-    @PostMapping("/notifyPartner")
-    public Mono<Void> notifyPartner(DeliveryPartner deliveryPartner, OrderPartnerDetails orderPartnerDetails) {
-        return notificationService.notifyPartner(deliveryPartner, orderPartnerDetails);
-    }
-    @PostMapping("/notifyPartner")
-    public Mono<Boolean> waitForAcceptance(DeliveryPartner deliveryPartner, OrderRequest orderRequest) {
-        return notificationService.waitForAcceptance(deliveryPartner, orderRequest);
+    @PostMapping("/waitForDeliveryPartnerAcceptance")
+    public Mono<Boolean> waitForAcceptance(OrderPartnerDetails orderPartnerDetails) {
+        return notificationService.waitForAcceptance(orderPartnerDetails);
     }
     @PostMapping("/notifyPartner")
     public void acknowledgeOrder(String orderId, boolean accepted) {

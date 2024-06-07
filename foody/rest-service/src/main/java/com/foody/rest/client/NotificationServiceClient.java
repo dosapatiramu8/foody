@@ -1,7 +1,9 @@
 package com.foody.rest.client;
 
+import com.foody.common.model.misc.OrderPartnerDetails;
 import com.foody.common.model.misc.maps.DistanceMatrixResponse;
 import com.foody.common.model.misc.maps.TravelInfo;
+import com.foody.common.model.request.deliverypartner.DeliveryPartnerRequest;
 import com.foody.rest.config.WebClientPropertiesConfig;
 import com.foody.rest.config.WebClientService;
 import lombok.extern.slf4j.Slf4j;
@@ -23,9 +25,9 @@ public class NotificationServiceClient extends WebClientService {
         super(webClient,webClientPropertiesConfig);
     }
 
-    public Mono<DistanceMatrixResponse> getTravelDistanceTime(double originLat, double originLng, double destLat, double destLng) {
+    public Mono<Void> getTravelDistanceTime(DeliveryPartnerRequest deliveryPartnerRequest, OrderPartnerDetails orderPartnerDetails) {
         HttpHeaders httpHeaders = getHttpHeaders();
-        return postAsync("/maps/api/distancematrix/json", httpHeaders, DistanceMatrixResponse.class);
+        return Mono.defer(() -> postAsync("/notification/assignDeliveryPartner", httpHeaders, null, Void.class));
     }
 
 
