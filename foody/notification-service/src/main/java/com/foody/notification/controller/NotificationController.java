@@ -1,13 +1,10 @@
 package com.foody.notification.controller;
 
-import com.foody.common.model.misc.OrderPartnerDetails;
-import com.foody.common.model.request.order.OrderRequest;
-import com.foody.data.entity.deliverypartner.DeliveryPartner;
+import com.foody.common.model.details.OrderRestaurantCustomerDeliveryDetails;
 import com.foody.notification.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
-import reactor.core.publisher.Sinks;
 
 @RestController
 @RequestMapping("/notifications")
@@ -21,16 +18,18 @@ public class NotificationController {
     }
 
     @PostMapping("/assignDeliveryPartner")
-    public Mono<Void> notifyPartner(OrderPartnerDetails orderPartnerDetails) {
-        return notificationService.notifyPartner(orderPartnerDetails);
+    public Mono<Void> notifyPartner(OrderRestaurantCustomerDeliveryDetails  orderRestaurantCustomerDeliveryDetails) {
+        return notificationService.notifyPartner(orderRestaurantCustomerDeliveryDetails);
     }
     @PostMapping("/waitForDeliveryPartnerAcceptance")
-    public Mono<Boolean> waitForAcceptance(OrderPartnerDetails orderPartnerDetails) {
-        return notificationService.waitForAcceptance(orderPartnerDetails);
+    public Mono<Boolean> waitForAcceptance(@RequestParam String orderId) {
+        return notificationService.waitForResponse(orderId);
     }
-    @PostMapping("/notifyPartner")
-    public void acknowledgeOrder(String orderId, boolean accepted) {
-        notificationService.acknowledgeOrder(orderId,accepted);
+
+    @PostMapping("/deliveryPartnerResponse")
+    public Mono<Void> deliveryPartnerResponse(@RequestParam String orderId, @RequestParam Boolean accepted) {
+        return notificationService.respondToOrder(orderId, accepted).then();
     }
+
 
 }

@@ -15,27 +15,6 @@ public class OrderController {
 
     private final OrderService orderService;
 
-    @PostMapping("/checkoutOrder")
-    public Mono<OrderResponse> checkoutOrder(@RequestBody OrderRequest orderRequest) {
-        return orderService.checkoutOrder(orderRequest);
-    }
-
-    /*@PostMapping("/api/orders/placeOrder")
-    public Mono<ResponseEntity<Map<String, String>>> placeOrder(@RequestBody OrderRequest orderRequest, UriComponentsBuilder uriBuilder) {
-
-        orderService.createOrder(orderRequest, uriBuilder)
-                .thenReturn(ResponseEntity.ok(Map.of("paymentUrl", paymentUrl)));
-
-
-        return orderService.createPaymentUrl(orderRequest, callbackUrl)
-                .flatMap(paymentUrl -> {
-                    // Save the order with a PENDING status
-                    return orderService.saveOrder(orderRequest, orderId, "PENDING")
-                            .thenReturn(ResponseEntity.ok(Map.of("paymentUrl", paymentUrl)));
-                })
-                .onErrorResume(e -> Mono.just(ResponseEntity.status(500).body(Map.of("error", e.getMessage()))));
-    }*/
-
 
     @PostMapping("/placeOrder")
     public Mono<ResponseEntity<String>> placeAnOrder(@RequestBody OrderRequest orderRequest) {

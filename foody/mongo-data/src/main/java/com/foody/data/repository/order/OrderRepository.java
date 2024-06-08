@@ -1,12 +1,15 @@
 package com.foody.data.repository.order;
 
+import com.foody.data.entity.maps.Location;
 import com.foody.data.entity.order.Order;
 import com.foody.data.entity.restaurant.MenuItem;
+import com.foody.data.entity.restaurant.RestaurantOrder;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
@@ -48,12 +51,12 @@ public class OrderRepository {
                 .then();
     }
 
-    public Mono<Void> updateOrderAndPaymentStatus(String orderId, String orderStatus, String paymentStatus) {
-        Query query = new Query(Criteria.where("id").is(orderId));
-        Update update = new Update().set("status", orderStatus).set("paymentStatus", paymentStatus);
-
-        return Mono.fromRunnable(() -> reactiveMongoTemplate.updateFirst(query, update, Order.class))
-                .then();
+    public Mono<Order> saveOrder(Order order) {
+        RestaurantOrder restaurantOrder = order.getRestaurant();
+        Location restaurantLocation = restaurantOrder.getAddress().getLocation();
+        GeoJsonPoint geoJsonPoint = new GeoJsonPoint(restaurantLocation.getLatitude(), restaurantLocation.getLongitude());
+        restaurantOrder.setLocation(geoJsonPoint);
+        return reactiveMongoTemplate.save(order);
     }
 
 

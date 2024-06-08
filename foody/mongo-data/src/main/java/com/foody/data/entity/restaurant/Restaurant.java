@@ -35,8 +35,6 @@ public class Restaurant {
     private Instant createdAt;
     private Instant updatedAt;
     private List<Item> items;
-    private double latitude;
-    private double longitude;
     private boolean isOpened;
     private Instant openTime;
     private Instant closeTime;

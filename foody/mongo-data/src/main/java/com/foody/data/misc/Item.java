@@ -1,10 +1,15 @@
 package com.foody.data.misc;
 
+import com.foody.common.model.details.SubItem;
+import com.foody.common.model.item.ItemAvailability;
+import com.foody.common.model.price.Taxes;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,4 +26,7 @@ public class Item {
     private String itemCategoryCode;
     private String itemCategoryDescription;
     private double price;
+    private Taxes itemTaxes;
+    private List<SubItem> subItem;
+    private ItemAvailability itemAvailability;
 }

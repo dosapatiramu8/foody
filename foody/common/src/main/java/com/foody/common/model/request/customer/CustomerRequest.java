@@ -14,6 +14,7 @@ import java.util.List;
 public class CustomerRequest extends UserRequest {
 
     private String customerId;
+    private AddressRequest primaryCurrentAddress;
     private String referralCode;
 
 }

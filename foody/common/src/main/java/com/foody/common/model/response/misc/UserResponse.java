@@ -1,7 +1,6 @@
 package com.foody.common.model.response.misc;
 
-import com.foody.common.model.misc.Location;
-import com.foody.common.model.request.misc.AddressRequest;
+import com.foody.common.model.misc.maps.Location;
 import lombok.*;
 
 import java.time.Instant;

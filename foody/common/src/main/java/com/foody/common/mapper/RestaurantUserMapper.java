@@ -14,6 +14,7 @@ public class RestaurantUserMapper {
     public Restaurant convertToRestaurantUser(RestaurantRequest restaurantUserRequest){
         Restaurant restaurantUser = new Restaurant();
         BeanUtils.copyProperties(restaurantUserRequest,restaurantUser);
+
         return restaurantUser;
     }
 

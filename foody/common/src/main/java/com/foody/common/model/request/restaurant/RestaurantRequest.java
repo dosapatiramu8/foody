@@ -1,10 +1,9 @@
 package com.foody.common.model.request.restaurant;
 
+import com.foody.common.model.request.misc.AddressRequest;
 import com.foody.common.model.request.misc.UserRequest;
-import com.foody.common.model.response.restaurant.ItemResponse;
 import lombok.*;
 
-import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
 
@@ -19,8 +18,6 @@ public class RestaurantRequest extends UserRequest {
     private String restaurantDescription;
     private Instant openTime;
     private Instant closeTime;
-    private String address;
-    private double latitude;
-    private double longitude;
-    private List<ItemRequest> itemResponseList;
+    private AddressRequest addressRequest;
+    private List<ItemRequest> items;
 }

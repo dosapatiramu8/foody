@@ -2,14 +2,17 @@ package com.foody.order.helper;
 
 import com.foody.common.exception.GlobalAppException;
 import com.foody.common.mapper.ItemMapper;
+import com.foody.common.mapper.OrderMapper;
 import com.foody.common.model.misc.maps.TravelInfo;
 import com.foody.common.model.request.misc.AddressRequest;
 import com.foody.common.model.request.order.OrderRequest;
-import com.foody.common.model.response.order.OrderStatus;
-import com.foody.common.model.response.order.Price;
+import com.foody.common.model.enums.OrderStatus;
+import com.foody.common.model.price.Price;
+import com.foody.data.entity.customer.Cart;
 import com.foody.data.entity.order.Order;
 import com.foody.data.misc.Item;
 import com.foody.rest.client.GoogleMapsAPI;
+import com.foody.rest.client.GoogleMapsClient;
 import lombok.RequiredArgsConstructor;
 import org.apache.hc.core5.http.HttpStatus;
 import org.springframework.stereotype.Component;
@@ -30,10 +33,11 @@ public class OrderHelper {
     private static final double GST_TAX = 0.18;
     private static final double PLATFORM_FEE = 5.0;
 
-    private final GoogleMapsAPI googleMapsAPI;
+    private final GoogleMapsClient googleMapsClient;
     private final ItemMapper itemMapper;
+    private final OrderMapper orderMapper;
 
-    public Mono<Order> calculateOrderTotal(OrderRequest orderRequest) {
+    public Mono<Cart> calculateOrderTotalAndCheckoutOrder(OrderRequest orderRequest) {
 
         AddressRequest customerAddress = prepareCustomerAddress(orderRequest);
         AddressRequest restaurantAddress = prepareRestaurantAddress(orderRequest);
@@ -55,14 +59,21 @@ public class OrderHelper {
 
     }
 
-    private static Mono<Order> prepareOrder(OrderRequest orderRequest, Price price, List<Item> items, TravelInfo travelInfo) {
+    private Mono<Order> prepareCart(OrderRequest orderRequest, Price price, List<Item> items, TravelInfo travelInfo) {
+
+        Cart cart = new Cart();
+       cart.setRestaurant();
+    }
+
+    private Mono<Order> prepareOrder(OrderRequest orderRequest, Price price, List<Item> items, TravelInfo travelInfo) {
+
         Order order = new Order();
         order.setCustomerId(orderRequest.getCustomerRequest().getCustomerId());
         order.setRestaurantId(orderRequest.getRestaurantRequest().getRestaurantId());
         order.setPrice(price);
         order.setItems(items);
         order.setOrderStatus(OrderStatus.PROCESSING);
-        order.setTimeInMinutes(travelInfo.getTimeInMinutes());
+        order.setTimeTakenInMinutes(travelInfo.getTimeInMinutes());
         order.setDistanceInKilometers(travelInfo.getDistanceInKilometers());
         return Mono.just(order);
     }
@@ -104,7 +115,11 @@ public class OrderHelper {
 
         return deliveryFee;
     }
-
+    private static double calculateTotalItemPrice(List<Item> items) {
+        return items.stream()
+                .mapToDouble(item -> item.getPrice() * item.getQuantity())
+                .sum();
+    }
     public static AddressRequest getPrimaryAddress(List<AddressRequest> addressRequestList, String addressNotFoundMessage) {
         return addressRequestList.stream()
                 .filter(AddressRequest::isPrimary)
@@ -120,15 +135,11 @@ public class OrderHelper {
         return getPrimaryAddress(orderRequest.getRestaurantRequest().getAddressRequestList(), "Restaurant Address not found");
     }
 
-    private static double calculateTotalItemPrice(List<Item> items) {
-        return items.stream()
-                .mapToDouble(item -> item.getPrice() * item.getQuantity())
-                .sum();
-    }
+
 
     public Mono<TravelInfo> getDistanceTime(double originLatitude, double originLongitude,
                                             double destinationLatitude, double destinationLongitude){
-        return googleMapsAPI.getTravelTimeInfo(originLatitude, originLongitude, destinationLatitude, destinationLongitude);
+        return googleMapsClient.getTravelTimeInfo(originLatitude, originLongitude, destinationLatitude, destinationLongitude);
 
     }
 }

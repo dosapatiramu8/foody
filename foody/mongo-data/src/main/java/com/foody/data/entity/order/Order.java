@@ -1,27 +1,33 @@
 package com.foody.data.entity.order;
 
-import com.foody.common.model.request.restaurant.ItemRequest;
-import com.foody.common.model.response.order.OrderStatus;
-import com.foody.common.model.response.order.Price;
+import com.foody.data.entity.customer.CustomerOrder;
+import com.foody.data.entity.price.Price;
+import com.foody.data.entity.restaurant.RestaurantOrder;
 import com.foody.data.misc.Item;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Order {
+
+    @Id
     private String id;
     private String orderId;
-    private String customerId;
-    private String restaurantId;
+    private CustomerOrder customer;
+    private RestaurantOrder restaurant;
     private List<Item> items;
     private Price price;
-    private OrderStatus orderStatus;
-    private double estimatedTimeInMinutes;
-    private double timeTakenInMinutes;
-    private double distanceInKilometers;
+    private Payment payment;
+    private String orderStatus;
+    private double deliveryTimeInMinutes;
+    private double deliveryDistanceInKilometers;
+
 }

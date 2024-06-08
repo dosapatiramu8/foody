@@ -1,6 +1,7 @@
 package com.foody.common.model.request.misc;
 
 
+import com.foody.common.model.misc.maps.Location;
 import lombok.*;
 
 @Data
@@ -9,16 +10,13 @@ import lombok.*;
 @Builder
 @EqualsAndHashCode(callSuper = false)
 public class AddressRequest {
-    private String addressType; //Home Office Friends Family
-    private String houseNum;
-    private String apartmentRoadArea;
-    private String landMark;
-    private String state;
-    private String city;
-    private String pinCode;
+    private String address;
     private String saveAs;
+    private String flatNumber;
+    private String city;
+    private String areaName;
+    private String pinCode;
     private boolean isPrimary;
-    private double latitude;
-    private double longitude;
+    private Location location;
 
 }

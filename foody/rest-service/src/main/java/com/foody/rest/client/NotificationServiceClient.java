@@ -1,9 +1,6 @@
 package com.foody.rest.client;
 
-import com.foody.common.model.misc.OrderPartnerDetails;
-import com.foody.common.model.misc.maps.DistanceMatrixResponse;
-import com.foody.common.model.misc.maps.TravelInfo;
-import com.foody.common.model.request.deliverypartner.DeliveryPartnerRequest;
+import com.foody.common.model.details.OrderRestaurantCustomerDeliveryDetails;
 import com.foody.rest.config.WebClientPropertiesConfig;
 import com.foody.rest.config.WebClientService;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +22,7 @@ public class NotificationServiceClient extends WebClientService {
         super(webClient,webClientPropertiesConfig);
     }
 
-    public Mono<Void> getTravelDistanceTime(DeliveryPartnerRequest deliveryPartnerRequest, OrderPartnerDetails orderPartnerDetails) {
+    public Mono<Void> sendDeliveryPartnerNotification(OrderRestaurantCustomerDeliveryDetails orderRestaurantCustomerDeliveryDetails) {
         HttpHeaders httpHeaders = getHttpHeaders();
         return Mono.defer(() -> postAsync("/notification/assignDeliveryPartner", httpHeaders, null, Void.class));
     }
@@ -40,5 +37,15 @@ public class NotificationServiceClient extends WebClientService {
         HttpHeaders httpHeaders = new HttpHeaders();
 
         return httpHeaders;
+    }
+
+    public Mono<Void> respondToOrder(String orderId, boolean accepted) {
+        HttpHeaders httpHeaders = getHttpHeaders();
+        return Mono.defer(() -> postAsync("/notification/deliveryPartnerResponse", httpHeaders, null, Void.class));
+    }
+
+    public Mono<Object> waitForResponse(String orderId) {
+        HttpHeaders httpHeaders = getHttpHeaders();
+        return Mono.defer(() -> postAsync("/notification/waitForDeliveryPartnerAcceptance", httpHeaders, null, Void.class));
     }
 }

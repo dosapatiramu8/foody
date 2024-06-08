@@ -1,5 +1,6 @@
 package com.foody.common.model.response.restaurant;
 
+import com.foody.common.model.enums.RestaurantAvailabilityStatus;
 import com.foody.common.model.response.misc.UserResponse;
 import lombok.*;
 
@@ -16,7 +17,6 @@ public class RestaurantResponse extends UserResponse {
     private String restaurantName;
     private String restaurantDescription;
     private List<ItemResponse> itemResponseList;
-    private Instant openTime;
-    private Instant closeTime;
+    private RestaurantAvailabilityStatus restaurantAvailabilityStatus;
     private BigDecimal rating;
 }

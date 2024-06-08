@@ -1,5 +1,6 @@
 package com.foody.data.misc;
 
+import com.foody.data.entity.maps.Location;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,7 @@ public class Address {
     private String city;
     private String zipCode;
     private String country;
+    private Location location;
     private String saveAs;
     private boolean isPrimary;
 }

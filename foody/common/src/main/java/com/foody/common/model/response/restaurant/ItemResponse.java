@@ -1,12 +1,9 @@
 package com.foody.common.model.response.restaurant;
 
-import com.foody.common.model.request.restaurant.ItemRequest;
+import com.foody.common.model.details.SubItem;
+import com.foody.common.model.item.ItemAvailability;
 import com.foody.common.model.request.restaurant.ItemType;
-import com.foody.common.model.response.order.Price;
 import lombok.*;
-
-import java.math.BigDecimal;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -23,8 +20,11 @@ public class ItemResponse {
     private String itemDescription;
     private String itemCategoryCode;
     private String itemCategoryDescription;
+    private SubItem subItem;
     private double price;
-    private boolean availability;
+    private double centralGst;
+    private double stateGst;
+    private ItemAvailability itemAvailability;
 
     //Image of items are stored in external drive naming restaurantId_itemId and accessing via URL
 

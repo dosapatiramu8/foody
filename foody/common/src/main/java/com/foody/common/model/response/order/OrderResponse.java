@@ -1,5 +1,7 @@
 package com.foody.common.model.response.order;
 
+import com.foody.common.model.enums.OrderStatus;
+import com.foody.common.model.price.Price;
 import com.foody.common.model.response.restaurant.ItemResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
