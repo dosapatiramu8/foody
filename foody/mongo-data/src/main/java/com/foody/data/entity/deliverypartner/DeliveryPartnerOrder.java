@@ -1,4 +1,4 @@
-package com.foody.data.entity.restaurant;
+package com.foody.data.entity.deliverypartner;
 
 import com.foody.data.misc.Address;
 import lombok.AllArgsConstructor;
@@ -11,16 +11,10 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RestaurantOrder {
-    private String restaurantId;
-    private String restaurantName;
+public class DeliveryPartnerOrder {
+    private String deliveryPartnerId;
     private String deviceAccessToken;
+    private String deliveryPartnerName;
     private String phoneNumber;
     private String emailId;
-    private String restaurantDescription;
-    private Address address;
-    @GeoSpatialIndexed
-    @Field("location")
-    private GeoJsonPoint location;
-
 }

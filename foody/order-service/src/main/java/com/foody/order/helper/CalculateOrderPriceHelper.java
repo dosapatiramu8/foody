@@ -1,32 +1,22 @@
-package com.foody.user.service;
+package com.foody.order.helper;
 
 import com.foody.common.mapper.CartMapper;
-import com.foody.common.model.misc.maps.TravelInfo;
+import com.foody.common.model.maps.TravelInfo;
 import com.foody.common.model.request.cart.CartRequest;
-import com.foody.common.model.response.cart.CartResponse;
-import com.foody.data.entity.customer.Cart;
 import com.foody.data.entity.price.DeliveryFee;
 import com.foody.data.entity.price.Price;
 import com.foody.data.entity.price.Taxes;
 import com.foody.data.misc.Item;
-import com.foody.data.repository.customer.CartRepository;
 import com.foody.rest.client.GoogleMapsClient;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
+import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
-@Service
+@Component
 @RequiredArgsConstructor
-public class CartService {
-
-
-    private final CartRepository cartRepository;
-
-    private final CartMapper cartMapper;
+public class CalculateOrderPriceHelper {
 
 
     //TODO: the below values should come from redis cache
@@ -44,24 +34,6 @@ public class CartService {
     private static final double RESTAURANT_DISCOUNT = 100;
     private static final boolean onConditionDeliveryFeeZero = true;
     private final GoogleMapsClient googleMapsClient;
-
-    public Mono<CartResponse> addItemToCart(CartRequest cartRequest) {
-        if (CollectionUtils.isEmpty(cartRequest.getItems())) {
-            return Mono.empty();
-        }
-        Cart cart = cartMapper.convertToCart(cartRequest);
-        cart.setUpdatedAt(LocalDateTime.now());
-        return calculateOrderPrice(cart.getItems(), cartRequest).flatMap(price -> {
-            cart.setPrice(price);
-            return cartRepository.addItemToCart(cart).flatMap(cartMapper::convertToCartResponse);
-        });
-
-    }
-
-    public Mono<String> clearCart(String userId) {
-
-        return cartRepository.clearCart(userId).thenReturn("Cart cleared successfully");
-    }
 
     private Price buildAllPriceDetails(double totalItemPrice, Taxes taxes, DeliveryFee deliveryFee) {
         Price price = new Price();
@@ -112,7 +84,7 @@ public class CartService {
         return items.stream().mapToDouble(item -> item.getPrice() * item.getQuantity()).sum();
     }
 
-    private Mono<Price> calculateOrderPrice(List<Item> items, CartRequest cartRequest) {
+    public Mono<Price> calculateOrderPrice(List<Item> items, CartRequest cartRequest) {
         Mono<TravelInfo> travelInfoMono = googleMapsClient.getTravelTimeInfo(cartRequest.getRestaurantLocation().getLatitude(), cartRequest.getRestaurantLocation().getLongitude(), cartRequest.getCustomerLocation().getLatitude(), cartRequest.getCustomerLocation().getLongitude());
 
         double totalItemPrice = calculateTotalItemPrice(items);
@@ -133,5 +105,4 @@ public class CartService {
     public double calculateTax(double price, double percentage) {
         return price * (percentage / 100);
     }
-
 }

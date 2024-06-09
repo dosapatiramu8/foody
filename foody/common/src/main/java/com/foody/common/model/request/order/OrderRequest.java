@@ -3,7 +3,10 @@ package com.foody.common.model.request.order;
 import com.foody.common.model.details.PaymentDetails;
 import com.foody.common.model.request.customer.CustomerRequest;
 import com.foody.common.model.request.restaurant.RestaurantRequest;
+import com.foody.data.entity.customer.CustomerOrder;
+import com.foody.data.entity.deliverypartner.DeliveryPartnerOrder;
 import com.foody.data.entity.price.Price;
+import com.foody.data.entity.restaurant.RestaurantOrder;
 import com.foody.data.misc.Item;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,8 +21,9 @@ import java.util.List;
 @Builder
 public class OrderRequest {
     private String orderId;
-    private CustomerRequest customerRequest;
-    private RestaurantRequest restaurantRequest;
+    private CustomerOrder customer;
+    private RestaurantOrder restaurant;
+    private DeliveryPartnerOrder deliveryPartnerOrder;
     private List<Item> items;
     private Price price;
     private PaymentDetails paymentDetails;

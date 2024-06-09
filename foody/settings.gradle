@@ -18,4 +18,5 @@ include 'common'
 include 'admin-service'
 include 'rest-service'
 include 'kafka'
+include 'product-service'
 

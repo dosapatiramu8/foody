@@ -1,5 +1,13 @@
 package com.foody.common.utils;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.foody.common.exception.GlobalAppException;
+import org.springframework.http.HttpStatus;
+
+import java.util.Objects;
+
 public class AppUtils {
 
     private static final int EARTH_RADIUS_KM = 6371; // Radius of the earth in kilometers
@@ -26,6 +34,30 @@ public class AppUtils {
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
         return EARTH_RADIUS_KM * c;
+    }
+
+
+
+    public static String convertToString(Object jsonPayload) {
+        try {
+            if(Objects.isNull(jsonPayload)){
+                return null;
+            }
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.registerModule(new JavaTimeModule());
+            return objectMapper.writeValueAsString(jsonPayload);
+        } catch (JsonProcessingException e) {
+            throw new GlobalAppException(HttpStatus.INTERNAL_SERVER_ERROR,
+                    "Error while converting to string");
+        }
+    }
+
+    public static <T> T convertToObjectType(String jsonPayload, Class<T> t) {
+        try {
+            return new ObjectMapper().readValue(jsonPayload, t);
+        } catch (JsonProcessingException e) {
+            throw new GlobalAppException(HttpStatus.INTERNAL_SERVER_ERROR, "Error while converting to Object Type");
+        }
     }
 
 }

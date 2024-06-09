@@ -1,7 +1,7 @@
 package com.foody.rest.client;
 
-import com.foody.common.model.misc.maps.DistanceMatrixResponse;
-import com.foody.common.model.misc.maps.TravelInfo;
+import com.foody.common.model.maps.DistanceMatrixResponse;
+import com.foody.common.model.maps.TravelInfo;
 import com.foody.rest.config.WebClientPropertiesConfig;
 import com.foody.rest.config.WebClientService;
 import lombok.extern.slf4j.Slf4j;

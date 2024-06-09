@@ -1,6 +1,6 @@
 package com.foody.rest.client;
 
-import com.foody.common.model.details.OrderRestaurantCustomerDeliveryDetails;
+import com.foody.common.model.request.order.OrderRequest;
 import com.foody.rest.config.WebClientPropertiesConfig;
 import com.foody.rest.config.WebClientService;
 import lombok.extern.slf4j.Slf4j;
@@ -22,9 +22,15 @@ public class NotificationServiceClient extends WebClientService {
         super(webClient,webClientPropertiesConfig);
     }
 
-    public Mono<Void> sendDeliveryPartnerNotification(OrderRestaurantCustomerDeliveryDetails orderRestaurantCustomerDeliveryDetails) {
+    public Mono<String> sendDeliveryPartnerNotification(OrderRequest orderRequest) {
         HttpHeaders httpHeaders = getHttpHeaders();
-        return Mono.defer(() -> postAsync("/notification/assignDeliveryPartner", httpHeaders, null, Void.class));
+        return Mono.defer(() -> postAsync("/notification/assignDeliveryPartner", httpHeaders, orderRequest, String.class));
+    }
+
+
+    public Mono<String> sendOrderDetailsToRestaurant(OrderRequest orderRequest) {
+        HttpHeaders httpHeaders = getHttpHeaders();
+        return Mono.defer(() -> postAsync("/notification/sendOrderDetailsToRestaurant", httpHeaders, orderRequest, String.class));
     }
 
 

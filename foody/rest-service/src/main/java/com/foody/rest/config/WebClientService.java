@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
@@ -41,7 +42,7 @@ public class WebClientService {
             })
         .onErrorMap(
             WebClientResponseException.class,
-            e -> new GlobalAppException(e.getStatusCode().value(),
+            e -> new GlobalAppException(HttpStatus.valueOf(e.getStatusCode().value()),
                 e.getResponseBodyAsString()));
     }
 
@@ -56,12 +57,11 @@ public class WebClientService {
      * @return A Mono of ResponseEntity representing the response entity with status, headers, and body.
      */
     public <P, R> Mono<R> postAsync(String uri, HttpHeaders httpHeaders, P payload, Class<R> r) {
-        long startTime = System.currentTimeMillis();
         return postCall(uri,httpHeaders,payload).bodyToMono(r).doOnSuccess(response -> {
             log.info("Client API call {} {} {} ",uri, httpHeaders, payload);
         }).onErrorMap(
             WebClientResponseException.class,
-            e -> new GlobalAppException(e.getStatusCode().value(),
+            e -> new GlobalAppException(HttpStatus.valueOf(e.getStatusCode().value()),
                 e.getResponseBodyAsString()));
     }
 
@@ -80,7 +80,7 @@ public class WebClientService {
             log.info("Client API call {} ",uri);
         }).onErrorMap(
             WebClientResponseException.class,
-            e -> new GlobalAppException(e.getStatusCode().value(),
+            e -> new GlobalAppException(HttpStatus.valueOf(e.getStatusCode().value()),
                 e.getResponseBodyAsString()));
     }
 
@@ -128,14 +128,13 @@ public class WebClientService {
     private <R> Mono<R> getCallToMono(String uri,HttpHeaders httpHeaders, Class<R> r) {
         return getAsyncCall(uri,httpHeaders).bodyToMono(r).onErrorMap(
                 WebClientResponseException.class,
-                e -> new GlobalAppException(e.getStatusCode().value(),
+                e -> new GlobalAppException(HttpStatus.valueOf(e.getStatusCode().value()),
                         e.getResponseBodyAsString()));
     }
 
 
 
     public <R> Mono<R> getAsyncWithoutHeaders(String uri, Class<R> r) {
-        long startTime = System.currentTimeMillis();
         return getCallToMonoWithoutHeaders(uri,r).doOnSuccess(response -> {
             log.info("Client API call {}",uri);
         });
@@ -145,7 +144,7 @@ public class WebClientService {
     private <R> Mono<R> getCallToMonoWithoutHeaders(String uri, Class<R> r) {
         return getAsyncCallWithoutHeader(uri).bodyToMono(r).onErrorMap(
                 WebClientResponseException.class,
-                e -> new GlobalAppException(e.getStatusCode().value(),
+                e -> new GlobalAppException(HttpStatus.valueOf(e.getStatusCode().value()),
                         e.getResponseBodyAsString()));
     }
 

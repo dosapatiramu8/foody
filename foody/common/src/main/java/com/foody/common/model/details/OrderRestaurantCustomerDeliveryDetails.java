@@ -1,15 +1,14 @@
 package com.foody.common.model.details;
 
-import com.foody.common.model.misc.maps.Location;
+import com.foody.common.model.maps.LocationDetails;
 import com.foody.common.model.request.restaurant.ItemRequest;
 import com.foody.common.model.response.deliverypartner.DeliveryPartnerAcceptanceStatus;
 import com.foody.common.model.enums.OrderStatus;
-import com.foody.common.model.price.Price;
+import com.foody.data.entity.price.Price;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.time.Instant;
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class OrderRestaurantCustomerDeliveryDetails {
     private String customerId;
     private DeliveryPartnerDetails deliveryPartnerDetails;
     private RestaurantDetails restaurantDetails;
-    private Location customerLocation;
+    private LocationDetails customerLocation;
     private double timeInMinutes;
     private double distanceInKilometers;
     private DeliveryPartnerAcceptanceStatus deliveryPartnerAcceptanceStatus;

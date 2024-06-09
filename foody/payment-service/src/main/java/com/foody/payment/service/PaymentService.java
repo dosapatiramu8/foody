@@ -12,4 +12,9 @@ public class PaymentService {
         // Mock implementation for payment processing
         return Mono.just(new PaymentResponse("12345", true)); // Assume payment is always successful
     }
+
+    public Mono<String> initiateRefund(String orderId){
+        //TODO: fetch the order details for payment transactionId and update order collection with refund intitated and make a payment gateway call to refund
+        return Mono.empty();
+    }
 }

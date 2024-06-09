@@ -28,6 +28,7 @@
         <module name="foody.support-service.main" />
         <module name="foody.inventory-service.main" />
         <module name="foody.customer-service.main" />
+        <module name="foody.product-service.main" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
@@ -38,6 +39,7 @@
         <module name="foody.sql-data.test" />
         <module name="foody.support-service.test" />
         <module name="foody.common.test" />
+        <module name="foody.product-service.test" />
         <module name="foody.mongo-data.test" />
         <module name="foody.order-service.test" />
         <module name="foody.rest-service.test" />

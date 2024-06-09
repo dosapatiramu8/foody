@@ -1,6 +1,7 @@
 package com.foody.data.entity.order;
 
 import com.foody.data.entity.customer.CustomerOrder;
+import com.foody.data.entity.deliverypartner.DeliveryPartnerOrder;
 import com.foody.data.entity.price.Price;
 import com.foody.data.entity.restaurant.RestaurantOrder;
 import com.foody.data.misc.Item;
@@ -23,6 +24,7 @@ public class Order {
     private String orderId;
     private CustomerOrder customer;
     private RestaurantOrder restaurant;
+    private DeliveryPartnerOrder deliveryPartnerOrder;
     private List<Item> items;
     private Price price;
     private Payment payment;

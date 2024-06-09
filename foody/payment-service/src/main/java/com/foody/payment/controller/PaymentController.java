@@ -10,7 +10,6 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/payments")
 public class PaymentController {
 
     private final PaymentService paymentService;
@@ -18,6 +17,11 @@ public class PaymentController {
     @PostMapping("/process")
     public Mono<PaymentResponse> processPayment(@RequestBody OrderRequest orderRequest) {
         return paymentService.processPayment(orderRequest);
+    }
+
+    @PostMapping("/initiateRefund")
+    public Mono<String> initiateRefund(@RequestParam String orderId) {
+        return paymentService.initiateRefund(orderId);
     }
 }
 

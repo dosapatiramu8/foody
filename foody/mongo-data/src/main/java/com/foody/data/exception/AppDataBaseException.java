@@ -1,4 +1,4 @@
-package com.foody.common.exception;
+package com.foody.data.exception;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -8,7 +8,11 @@ import org.springframework.http.HttpStatus;
 @Data
 @RequiredArgsConstructor
 @EqualsAndHashCode(callSuper=false)
-public class GlobalAppException extends RuntimeException{
+public class AppDataBaseException extends RuntimeException{
+
     private final HttpStatus httpStatus;
     private final String message;
+
 }
+
+

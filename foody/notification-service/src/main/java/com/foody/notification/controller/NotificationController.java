@@ -1,35 +1,31 @@
 package com.foody.notification.controller;
 
-import com.foody.common.model.details.OrderRestaurantCustomerDeliveryDetails;
+import com.foody.common.model.request.order.OrderRequest;
 import com.foody.notification.service.NotificationService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/notifications")
+@RequiredArgsConstructor
 public class NotificationController {
 
     private final NotificationService notificationService;
 
-    @Autowired
-    public NotificationController(NotificationService notificationService) {
-        this.notificationService = notificationService;
-    }
 
     @PostMapping("/assignDeliveryPartner")
-    public Mono<Void> notifyPartner(OrderRestaurantCustomerDeliveryDetails  orderRestaurantCustomerDeliveryDetails) {
-        return notificationService.notifyPartner(orderRestaurantCustomerDeliveryDetails);
-    }
-    @PostMapping("/waitForDeliveryPartnerAcceptance")
-    public Mono<Boolean> waitForAcceptance(@RequestParam String orderId) {
-        return notificationService.waitForResponse(orderId);
+    public Mono<String> assignDeliveryPartner(@RequestBody OrderRequest orderRequest) {
+        return notificationService.sendOrderDeliveryPartnerNotification(
+                orderRequest.getDeliveryPartnerOrder().getDeviceAccessToken(), orderRequest);
     }
 
-    @PostMapping("/deliveryPartnerResponse")
-    public Mono<Void> deliveryPartnerResponse(@RequestParam String orderId, @RequestParam Boolean accepted) {
-        return notificationService.respondToOrder(orderId, accepted).then();
-    }
 
+    @PostMapping("/sendOrderDetailsToRestaurant/{accessToken}")
+    public Mono<String> assignOrderToRestaurantPartner(@RequestBody OrderRequest orderRequest) {
+        return notificationService.sendOrderToRestaurantNotification(
+                orderRequest.getRestaurant().getDeviceAccessToken(), orderRequest);
+    }
 
 }

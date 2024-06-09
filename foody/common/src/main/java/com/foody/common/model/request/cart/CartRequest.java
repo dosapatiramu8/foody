@@ -1,6 +1,6 @@
 package com.foody.common.model.request.cart;
 
-import com.foody.common.model.misc.maps.Location;
+import com.foody.common.model.maps.LocationDetails;
 import com.foody.data.misc.Item;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,8 +20,8 @@ public class CartRequest {
     private String restaurantId;
     private String restaurantName;
     private List<Item> items;
-    private Location customerLocation;
-    private Location restaurantLocation;
+    private LocationDetails customerLocation;
+    private LocationDetails restaurantLocation;
     private double deliveryTip;
 
 }
