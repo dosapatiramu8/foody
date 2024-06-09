@@ -2,7 +2,6 @@ package com.foody.notification.service;
 
 import com.foody.common.model.request.order.OrderRequest;
 import com.foody.common.utils.AppUtils;
-import com.foody.data.repository.order.OrderRepository;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.Message;
 import lombok.RequiredArgsConstructor;
@@ -19,11 +18,15 @@ public class NotificationService {
     private final RedisTemplate<String, Object> redisTemplate;
     private final ChannelTopic topic;
 
-    private final OrderRepository orderRepository;
+    //private final OrderRepository orderRepository;
 
-    @Value("${order.deliveryPartner.topic}")
+    //@Value("${order.deliveryPartner.topic}")
     private String deliveryPartnerNotification;
 
+    public void publishOrderResponse(String orderId, boolean accepted) {
+        String message = orderId + ":" + accepted;
+        redisTemplate.convertAndSend("orderNotifications", message);
+    }
 
     public Mono<String> sendOrderDeliveryPartnerNotification(String accessToken, OrderRequest orderRequest) {
         String messageBody = AppUtils.convertToString(orderRequest);
@@ -45,4 +48,7 @@ public class NotificationService {
     }
 
 
+    public void respondToOrder(String orderId, boolean accepted) {
+        System.out.println("OrderId "+orderId+" "+accepted);
+    }
 }

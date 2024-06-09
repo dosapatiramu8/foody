@@ -1,7 +1,6 @@
 package com.foody.data.entity.deliverypartner;
 
-import com.foody.common.model.misc.Location;
-import com.foody.common.model.response.deliverypartner.DeliveryPartnerAcceptanceStatus;
+import com.foody.data.entity.maps.Location;
 import com.foody.data.misc.Item;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,7 +25,7 @@ public class OrderRestaurantCustomerDelivery {
     private Location deliveryPartnerLocation;
     private String estimatedTime;
     private double distance;
-    private DeliveryPartnerAcceptanceStatus deliveryPartnerAcceptanceStatus;
+    private String deliveryPartnerAcceptanceStatus;
     private List<Item> items;
     private String timestamp;
 }

@@ -1,6 +1,6 @@
 package com.foody.common.model.details;
 
-import com.foody.common.model.misc.maps.Location;
+import com.foody.common.model.maps.LocationDetails;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,5 +16,5 @@ public class DeliveryPartnerDetails {
     private String name;
     private String email;
     private String phoneNumber;
-    private Location deliveryPartnerLocation;
+    private LocationDetails deliveryPartnerLocation;
 }

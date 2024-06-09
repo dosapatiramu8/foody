@@ -2,6 +2,7 @@ package com.foody.common.model.request.order;
 
 import com.foody.common.model.details.PaymentDetails;
 import com.foody.common.model.request.customer.CustomerRequest;
+import com.foody.common.model.request.restaurant.ItemRequest;
 import com.foody.common.model.request.restaurant.RestaurantRequest;
 import com.foody.data.entity.customer.CustomerOrder;
 import com.foody.data.entity.deliverypartner.DeliveryPartnerOrder;

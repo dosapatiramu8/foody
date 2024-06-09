@@ -1,7 +1,6 @@
 package com.foody.data.repository.customer;
 
 import com.foody.data.entity.customer.CustomerUser;
-import com.foody.data.entity.deliverypartner.DeliveryPartnerUser;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

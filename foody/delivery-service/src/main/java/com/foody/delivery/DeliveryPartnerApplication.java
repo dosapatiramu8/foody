@@ -1,4 +1,4 @@
-package com.foody.restaurant;
+package com.foody.delivery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,12 +11,9 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication(exclude =
         {DataSourceAutoConfiguration.class, MongoAutoConfiguration.class,
                 MongoDataAutoConfiguration.class, MongoReactiveAutoConfiguration.class})
-@ComponentScan({"com.foody.restaurant","com.foody.data", "com.foody.common"})
-public class RestaurantApplication {
-
-
+@ComponentScan({"com.foody.data", "com.foody.common"})
+public class DeliveryPartnerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(RestaurantApplication.class, args);
+        SpringApplication.run(DeliveryPartnerApplication.class, args);
     }
-
 }

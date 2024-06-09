@@ -37,10 +37,6 @@ public class DeliveryPartnerController {
         return deliveryPartnerService.deleteDeliveryPartner(id);
     }
 
-    @GetMapping("/assignDeliveryPartner")
-    public Mono<String> assignDeliveryPartner(@RequestParam double latitude, @RequestParam double longitude){
-        return deliveryPartnerService.assignDeliveryPartner(latitude,longitude);
-    }
 }
 
 

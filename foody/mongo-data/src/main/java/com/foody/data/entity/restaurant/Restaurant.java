@@ -27,7 +27,6 @@ public class Restaurant {
     private String email;
     private String phoneNumber;
     private String password;
-    private String address;
     private BigDecimal rating;
     @GeoSpatialIndexed
     @Field("location")
@@ -38,5 +37,6 @@ public class Restaurant {
     private boolean isOpened;
     private Instant openTime;
     private Instant closeTime;
+    private Address address;
 
 }

@@ -1,7 +1,7 @@
 package com.foody.common.model.response.cart;
 
-import com.foody.common.model.misc.maps.TravelInfo;
-import com.foody.common.model.price.Price;
+import com.foody.common.model.maps.TravelInfo;
+import com.foody.data.entity.price.Price;
 import com.foody.data.misc.Item;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

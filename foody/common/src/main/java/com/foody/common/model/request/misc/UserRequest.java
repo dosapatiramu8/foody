@@ -1,6 +1,6 @@
 package com.foody.common.model.request.misc;
 
-import com.foody.common.model.misc.maps.Location;
+import com.foody.common.model.maps.LocationDetails;
 import lombok.*;
 
 import java.time.Instant;
@@ -19,7 +19,7 @@ public class UserRequest {
     private String phoneNumber;
     private String password;
     private List<AddressRequest> addressRequestList;
-    private Location currentLocation;
+    private LocationDetails currentLocation;
     private Instant createdAt;
     private Instant updatedAt;
 

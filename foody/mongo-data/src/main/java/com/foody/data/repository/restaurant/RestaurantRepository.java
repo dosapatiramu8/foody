@@ -1,5 +1,6 @@
 package com.foody.data.repository.restaurant;
 
+import com.foody.data.entity.maps.Location;
 import com.foody.data.entity.restaurant.Restaurant;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
@@ -20,7 +21,8 @@ public class RestaurantRepository {
     private final ReactiveMongoTemplate reactiveMongoTemplate;
 
     public Mono<Restaurant> save(Restaurant restaurantUser) {
-        GeoJsonPoint geoJsonPoint = new GeoJsonPoint(restaurantUser.getLongitude(),restaurantUser.getLatitude());
+        Location location = restaurantUser.getAddress().getLocation();
+        GeoJsonPoint geoJsonPoint = new GeoJsonPoint(location.getLatitude(), location.getLongitude());
         restaurantUser.setLocation(geoJsonPoint);
         return reactiveMongoTemplate.save(restaurantUser);
     }

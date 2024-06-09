@@ -1,6 +1,6 @@
 package com.foody.common.model.response.misc;
 
-import com.foody.common.model.misc.maps.Location;
+import com.foody.common.model.maps.LocationDetails;
 import lombok.*;
 
 import java.time.Instant;
@@ -18,5 +18,5 @@ public class UserResponse {
     private List<String> addresses;
     private Instant createdAt;
     private Instant updatedAt;
-    private Location currentLocation;
+    private LocationDetails currentLocation;
 }

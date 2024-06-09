@@ -28,8 +28,4 @@ public class DeliveryPartner {
     private String vehicleNumber;
     private String chassisNumber;
     private Instant registrationDate;
-    private boolean availability;
-    @GeoSpatialIndexed(type = GeoSpatialIndexType.GEO_2DSPHERE)
-    @Field("location")
-    private GeoJsonPoint location;
 }

@@ -9,28 +9,28 @@ plugins {
 
 group 'com.foody.notification'
 version '1.4.0'
-
+sourceCompatibility = '17.0.8'
 repositories {
+    google()
     mavenCentral()
 }
 
 dependencies {
-    implementation project(":kafka")
+   // implementation project(":kafka")
     implementation project(":common")
     implementation project(":mongo-data")
 
 
     // https://mvnrepository.com/artifact/com.google.firebase/firebase-messaging
-    implementation group: 'com.google.firebase', name: 'firebase-messaging', version: '24.0.0'
+    //implementation group: 'com.google.firebase', name: 'firebase-messaging', version: '24.0.0'
 // https://mvnrepository.com/artifact/com.google.firebase/firebase-core
-    implementation group: 'com.google.firebase', name: 'firebase-core', version: '21.1.1'
+   // implementation group: 'com.google.firebase', name: 'firebase-core', version: '21.1.1'
 // https://mvnrepository.com/artifact/com.google.firebase/firebase-admin
     implementation group: 'com.google.firebase', name: 'firebase-admin', version: '9.3.0'
-    // https://mvnrepository.com/artifact/com.google.firebase/firebase-auth
-    implementation group: 'com.google.firebase', name: 'firebase-auth', version: '23.0.0'
+
 
 // https://mvnrepository.com/artifact/com.google.firebase/firebase-analytics
-    implementation group: 'com.google.firebase', name: 'firebase-analytics', version: '22.0.1'
+    //implementation group: 'com.google.firebase', name: 'firebase-analytics', version: '22.0.1'
 
 
     implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'

@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class SubItem {
+public class SubItemDetails {
     private String subItemName;
     private double subItemPrice;
 

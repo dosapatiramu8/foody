@@ -6,6 +6,7 @@ import com.foody.common.model.response.cart.CartResponse;
 import com.foody.common.model.response.restaurant.RestaurantResponse;
 import com.foody.data.entity.customer.Cart;
 import com.foody.data.entity.restaurant.Restaurant;
+import com.foody.data.entity.restaurant.RestaurantOrder;
 import com.foody.data.misc.Item;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
@@ -37,18 +38,6 @@ public class CartMapper {
         return Mono.just(cartResponse);
     }
 
-    public Cart convertToCart(OrderRequest orderRequest) {
-        Restaurant restaurant = new Restaurant();
-        BeanUtils.copyProperties(orderRequest.getRestaurantRequest(), restaurant);
-        List<Item> items = orderRequest.getRestaurantRequest().getItems().stream()
-                .map(itemMapper::convertToItem).toList();
-
-        Cart cart = new Cart();
-        cart.setItems(items);
-        BeanUtils.copyProperties(orderRequest, cart);
-        cart.setRestaurant(restaurant);
-        cart.setCustomerLocation(cartRequest.getCustomerLocation());
-        return cart;
-    }
+    
 
 }

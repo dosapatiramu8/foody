@@ -1,14 +1,13 @@
 package com.foody.data.misc;
 
-import com.foody.common.model.details.SubItem;
-import com.foody.common.model.item.ItemAvailability;
-import com.foody.common.model.price.Taxes;
+
+import com.foody.data.entity.price.Taxes;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 import java.util.List;
+
 
 @Data
 @NoArgsConstructor

@@ -2,7 +2,6 @@ package com.foody.restaurant.controller;
 
 import com.foody.common.model.request.restaurant.ItemRequest;
 import com.foody.common.model.response.restaurant.ItemResponse;
-import com.foody.common.model.response.restaurant.MenuItemResponse;
 import com.foody.restaurant.service.MenuService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

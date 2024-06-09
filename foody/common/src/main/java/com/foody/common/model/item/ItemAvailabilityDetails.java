@@ -8,7 +8,7 @@ import java.time.LocalTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ItemAvailability {
+public class ItemAvailabilityDetails {
     private LocalTime from;
     private LocalTime to;
     private boolean availability;

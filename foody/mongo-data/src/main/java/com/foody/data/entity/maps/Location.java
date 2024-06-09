@@ -1,6 +1,5 @@
 package com.foody.data.entity.maps;
 
-import com.foody.common.model.misc.maps.TravelInfo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

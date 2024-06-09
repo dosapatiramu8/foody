@@ -1,5 +1,5 @@
 server:
-  port: 8085
+  port: 8082
   compression:
     enabled: true
     mime-types:
@@ -15,3 +15,13 @@ spring:
 logging:
   level:
     com.foody.restaurant: INFO
+
+mongodb:
+  uri: mongodb://localhost:27017/
+  databaseName: foody
+  connectTimeout: 15
+  readTimeout: 15
+  maxWaitTime: 15
+  maxPoolSize: 200
+  minPoolSize: 50
+  maxConnectionIdleTime: 30

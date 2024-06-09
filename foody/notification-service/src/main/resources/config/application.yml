@@ -1,0 +1,42 @@
+server:
+  port: 8082
+  compression:
+    enabled: true
+    mime-types:
+      - application/json
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    #password: yourpassword   # Optional, if you have set a password for your Redis instance
+    timeout: 60000           # Timeout in milliseconds
+    lettuce: # Configuration for Lettuce, the Redis client library
+      pool:
+        max-active: 8        # Maximum number of connections that can be allocated by the pool at a given time
+        max-idle: 8          # Maximum number of idle connections in the pool
+        min-idle: 0          # Minimum number of idle connections in the pool
+        max-wait: -1ms       # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception
+  webflux:
+    base-path: /notification
+  application:
+    name: food
+  codec:
+    max-in-memory-size: 5000KB
+
+logging:
+  level:
+    com.foody.restaurant: INFO
+
+
+# Additional configurations for your application
+
+
+mongodb:
+  uri: mongodb://localhost:27017/
+  databaseName: foody
+  connectTimeout: 15
+  readTimeout: 15
+  maxWaitTime: 15
+  maxPoolSize: 200
+  minPoolSize: 50
+  maxConnectionIdleTime: 30

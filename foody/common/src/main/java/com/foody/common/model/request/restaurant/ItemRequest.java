@@ -1,7 +1,7 @@
 package com.foody.common.model.request.restaurant;
 
-import com.foody.common.model.details.SubItem;
-import com.foody.common.model.item.ItemAvailability;
+import com.foody.common.model.details.SubItemDetails;
+import com.foody.common.model.item.ItemAvailabilityDetails;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -22,7 +22,7 @@ public class ItemRequest {
     private String itemDescription;
     private String itemCategoryCode;
     private String itemCategoryDescription;
-    private SubItem subItem;
+    private SubItemDetails subItem;
     private BigDecimal price;
-    private ItemAvailability itemAvailability;
+    private ItemAvailabilityDetails itemAvailability;
 }
