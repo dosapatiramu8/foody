@@ -7,16 +7,14 @@ import java.time.Instant;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class UserResponse {
     private Long id;
     private String name;
     private String email;
     private String phoneNumber;
     private String password;
-    private List<String> addresses;
+    private List<AddressResponse> addresses;
     private Instant createdAt;
     private Instant updatedAt;
-    private LocationDetails currentLocation;
 }

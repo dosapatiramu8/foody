@@ -9,11 +9,9 @@ import java.time.Instant;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@EqualsAndHashCode(callSuper = false)
-public class RestaurantResponse extends UserResponse {
+@RequiredArgsConstructor
+public class RestaurantResponse {
+    private UserResponse userResponse;
     private String restaurantName;
     private String restaurantDescription;
     private List<ItemResponse> itemResponseList;

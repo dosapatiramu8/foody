@@ -16,7 +16,7 @@ public class RestaurantController {
     private final RestaurantService restaurantService;
 
     // Create operation
-    @PostMapping
+    @PostMapping("/")
     public Mono<RestaurantResponse> registerRestaurant(@RequestBody RestaurantRequest restaurantUserRequest) {
         return restaurantService.registerRestaurant(restaurantUserRequest);
     }
@@ -38,5 +38,7 @@ public class RestaurantController {
     public Mono<Void> deleteRestaurantUser(@PathVariable("id") String id) {
         return restaurantService.deleteRestaurant(id);
     }
+
+
 }
 

@@ -1,5 +1,7 @@
 package com.foody.data.entity.deliverypartner;
 
+import com.foody.data.entity.user.User;
+import com.foody.data.misc.Address;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,14 +16,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DeliveryPartner {
-    private Long id;
+
+    private User user;
     private String deliveryPartnerId;
-    private String userName;
-    private String name;
-    private String email;
-    private String phoneNumber;
-    private String password;
-    private String address;
+    private Address address;
     private Instant createdAt;
     private Instant updatedAt;
     private String vehicleType;

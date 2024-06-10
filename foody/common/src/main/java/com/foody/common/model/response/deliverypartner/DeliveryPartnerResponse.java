@@ -5,11 +5,9 @@ import lombok.*;
 import java.time.Instant;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@EqualsAndHashCode(callSuper = false)
-public class DeliveryPartnerResponse extends UserResponse {
+@RequiredArgsConstructor
+public class DeliveryPartnerResponse {
+    private UserResponse userResponse;
     private String vehicleType;
     private String vehicleNumber;
     private String chassisNumber;

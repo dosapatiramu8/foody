@@ -1,5 +1,6 @@
 package com.foody.common.model.request.restaurant;
 
+import com.foody.common.model.enums.RestaurantAvailabilityStatus;
 import com.foody.common.model.request.misc.AddressRequest;
 import com.foody.common.model.request.misc.UserRequest;
 import lombok.*;
@@ -8,11 +9,9 @@ import java.time.Instant;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@EqualsAndHashCode(callSuper = false)
-public class RestaurantRequest extends UserRequest {
+@RequiredArgsConstructor
+public class RestaurantRequest{
+    private UserRequest userRequest;
     private String restaurantId;
     private String restaurantName;
     private String restaurantDescription;
@@ -20,4 +19,5 @@ public class RestaurantRequest extends UserRequest {
     private Instant closeTime;
     private AddressRequest addressRequest;
     private List<ItemRequest> items;
+    private RestaurantAvailabilityStatus restaurantAvailabilityStatus;
 }

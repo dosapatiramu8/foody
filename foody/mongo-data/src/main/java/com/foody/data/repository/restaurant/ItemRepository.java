@@ -1,7 +1,7 @@
 package com.foody.data.repository.restaurant;
 
-import com.foody.data.entity.restaurant.MenuItem;
 import com.foody.data.misc.Item;
+import com.mongodb.client.result.UpdateResult;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -14,13 +14,14 @@ import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.List;
+import java.util.Objects;
+
 @Repository
 @AllArgsConstructor
-public class MenuRepository {
+public class ItemRepository {
 
     private final ReactiveMongoTemplate reactiveMongoTemplate;
-
-
 
     public Mono<Item> findById(String id) {
         return reactiveMongoTemplate.findById(id, Item.class);
@@ -39,10 +40,18 @@ public class MenuRepository {
         return reactiveMongoTemplate.remove(Query.query(Criteria.where("id").is(id)), Item.class).then();
     }
 
-    public Mono<Item> save(Item item) {
-        Query query = new Query(Criteria.where("_id").is(item.getRestaurantId()));
-        Update update = new Update().push("items", item);
+    public Flux<Item> saveAll(List<Item> items) {
+        return reactiveMongoTemplate.insertAll(items)
+                .thenMany(Flux.fromIterable(items));
+    }
 
-        return reactiveMongoTemplate.findAndModify(query, update, Item.class);
+    public Mono<Boolean> updateItem(Item item) {
+        Query query = new Query(Criteria.where("itemId").is(item.getItemId()));
+        Update update = new Update();
+        update.addToSet("itemName", item.getItemName());
+        if(Objects.nonNull(item.getItemAvailability())){
+            update.addToSet("itemAvailability.from",item.getItemAvailability().getFrom());
+        }
+        return reactiveMongoTemplate.updateFirst(query, update, Item.class).map(updateResult -> updateResult.getMatchedCount() > 0);
     }
 }

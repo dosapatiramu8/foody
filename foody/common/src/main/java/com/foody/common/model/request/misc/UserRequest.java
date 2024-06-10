@@ -18,9 +18,6 @@ public class UserRequest {
     private String email;
     private String phoneNumber;
     private String password;
-    private List<AddressRequest> addressRequestList;
-    private LocationDetails currentLocation;
-    private Instant createdAt;
-    private Instant updatedAt;
+
 
 }

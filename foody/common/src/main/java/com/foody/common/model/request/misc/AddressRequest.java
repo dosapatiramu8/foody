@@ -4,10 +4,7 @@ import com.foody.common.model.maps.LocationDetails;
 import lombok.*;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@EqualsAndHashCode(callSuper = false)
+@RequiredArgsConstructor
 public class AddressRequest {
     private String address;
     private String saveAs;

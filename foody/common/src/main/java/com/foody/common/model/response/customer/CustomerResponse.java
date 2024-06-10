@@ -1,14 +1,17 @@
 package com.foody.common.model.response.customer;
 
+import com.foody.common.model.response.misc.AddressResponse;
 import com.foody.common.model.response.misc.UserResponse;
+import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 
-@EqualsAndHashCode(callSuper = true)
+import java.util.List;
+
 @Data
-@AllArgsConstructor
-public class CustomerResponse extends UserResponse {
-
+@Builder
+public class CustomerResponse {
+    private UserResponse userResponse;
+    private String customerId;
+    private AddressResponse primaryCurrentAddress;
+    private List<AddressResponse> addresses;
 }

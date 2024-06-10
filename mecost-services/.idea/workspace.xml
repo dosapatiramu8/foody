@@ -1,43 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a63d43cc-cda4-4d39-a350-cee60eeeada9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/mapper/MenuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/mapper/OrderMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/model/misc/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/model/request/order/OrderRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/model/response/order/OrderResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/model/response/order/OrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/model/response/order/Price.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/model/response/restaurant/ItemResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/model/response/restaurant/MenuItemResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/mongo-data/src/main/java/com/foody/data/entity/order/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/mongo-data/src/main/java/com/foody/data/entity/restaurant/CustomRestaurantRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/mongo-data/src/main/java/com/foody/data/entity/restaurant/CustomRestaurantRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/mongo-data/src/main/java/com/foody/data/repository/order/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/mongo-data/src/main/java/com/foody/data/repository/restaurant/MenuRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/order-service/src/main/java/com/foody/order/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/order-service/src/main/java/com/foody/order/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/restaurant-service/src/main/java/com/foody/restaurant/controller/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/restaurant-service/src/main/java/com/foody/restaurant/service/MenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../foody/search-discovery-service/src/main/java/com/foody/search/ItemRestaurantController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/admin-service/src/main/java/com/foody/admin/mapper/AdminUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/mapper/AdminUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/admin-service/src/main/java/com/foody/admin/service/AdminUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/admin-service/src/main/java/com/foody/admin/service/AdminUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/common/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/model/request/misc/UserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/model/request/misc/UserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/model/response/misc/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/model/response/misc/UserResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/customer-service/src/main/java/com/foody/user/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/mapper/CustomerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/customer-service/src/main/java/com/foody/user/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/customer-service/src/main/java/com/foody/user/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/delivery-service/src/main/java/com/foody/delivery/mapper/DeliveryPartnerUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/mapper/DeliveryPartnerUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/delivery-service/src/main/java/com/foody/delivery/service/DeliveryPartnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/delivery-service/src/main/java/com/foody/delivery/service/DeliveryPartnerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/mongo-data/src/main/java/com/foody/data/entity/restaurant/RestaurantUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/mongo-data/src/main/java/com/foody/data/entity/restaurant/RestaurantUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/mongo-data/src/main/java/com/foody/data/misc/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/mongo-data/src/main/java/com/foody/data/misc/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/order-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/order-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/restaurant-service/src/main/java/com/foody/restaurant/controller/MenuItemController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/restaurant-service/src/main/java/com/foody/restaurant/controller/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/restaurant-service/src/main/java/com/foody/restaurant/controller/RestaurantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/restaurant-service/src/main/java/com/foody/restaurant/mapper/RestaurantUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/common/src/main/java/com/foody/common/mapper/RestaurantUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foody/restaurant-service/src/main/java/com/foody/restaurant/service/RestaurantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../foody/restaurant-service/src/main/java/com/foody/restaurant/service/RestaurantService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,33 +17,33 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "jagadeshwar"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jagadeshwar&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/jagadeshwar/foody.git",
-    "accountId": "2e4c107f-95f9-473a-ad16-e66d29ca5ed4"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jagadeshwar/foody.git&quot;,
+    &quot;accountId&quot;: &quot;2e4c107f-95f9-473a-ad16-e66d29ca5ed4&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2hNKA3h7qAVVc6kHfDRni22ydxV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

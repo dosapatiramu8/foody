@@ -1,6 +1,7 @@
 package com.foody.data.repository.customer;
 
 import com.foody.data.entity.customer.CustomerUser;
+import com.foody.data.repository.util.LogMessageUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -20,24 +21,30 @@ public class CustomerUserRepository {
     private final ReactiveMongoTemplate reactiveMongoTemplate;
 
     public Mono<CustomerUser> save(CustomerUser customerUser){
-        return reactiveMongoTemplate.save(customerUser);
+        return LogMessageUtils.exec("save customerDetails in DB", customerUser,
+                () -> reactiveMongoTemplate.insert(customerUser));
     }
 
     public Mono<CustomerUser> findById(String id) {
-        return reactiveMongoTemplate.findById(id, CustomerUser.class);
+        return LogMessageUtils.exec("find customerDetails by ID in DB", id,
+                () -> reactiveMongoTemplate.findById(id, CustomerUser.class));
     }
 
-    public Flux<CustomerUser> findAll(int page, int size, String sortByField) {
+
+    public Flux<CustomerUser> findAll(int page, int size, String sortByField, CustomerUser customerUser) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.ASC, sortByField));
-        return reactiveMongoTemplate.find(Query.query(new Criteria()).with(pageable), CustomerUser.class);
+        return LogMessageUtils.exececutedFlux("find all Customer Details ", customerUser,
+                () -> reactiveMongoTemplate.find(Query.query(new Criteria()).with(pageable), CustomerUser.class));
     }
 
     public Mono<CustomerUser> update(CustomerUser customerUser) {
-        return reactiveMongoTemplate.save(customerUser);
+        return LogMessageUtils.exec("update customerDetails in DB", customerUser,
+                () -> reactiveMongoTemplate.save(customerUser));
+    }
+    public Mono<Void> deleteById(String id) {
+        return LogMessageUtils.exec("delete customerDetails by ID in DB", id,
+                () -> reactiveMongoTemplate.remove(Query.query(Criteria.where("id").is(id)), CustomerUser.class).then());
     }
 
-    public Mono<Void> deleteById(String id) {
-        return reactiveMongoTemplate.remove(Query.query(Criteria.where("id").is(id)), CustomerUser.class).then();
-    }
 
 }

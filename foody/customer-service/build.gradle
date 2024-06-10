@@ -7,7 +7,7 @@ plugins {
     id "com.gorylenko.gradle-git-properties" version '2.4.1'
 }
 
-group 'com.foody.user'
+group 'com.foody.customer'
 version '0.0.1-SNAPSHOT'
 sourceCompatibility = '17.0.11'
 

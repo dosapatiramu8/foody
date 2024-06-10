@@ -10,10 +10,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@EqualsAndHashCode(callSuper = false)
-public class CustomerRequest extends UserRequest {
-
+public class CustomerRequest {
+    private UserRequest userRequest;
     private String customerId;
+    private List<AddressRequest> addressRequestList;
     private AddressRequest primaryCurrentAddress;
     private String referralCode;
 

@@ -1,5 +1,6 @@
 package com.foody.common.model.response.misc;
 
+import com.foody.common.model.maps.LocationDetails;
 import lombok.*;
 
 @Data
@@ -16,4 +17,5 @@ public class AddressResponse {
     private String pinCode;
     private String saveAs;
     private boolean isPrimary;
+    private LocationDetails locationDetails;
 }
